@@ -1,0 +1,56 @@
+# BOSSES — one card per line: Name | Rarity | F2P or P2P | Notes | Timer (hours)
+# Timer = hours before the card auto-discards. Leave it blank (or 0) for the default of 3 hours.
+# Lines starting with # and blank lines are ignored. Paste your own lines below to replace or extend.
+
+Gem Crab | Common | P2P | Low-level crab boss; uncut gem drops | 3
+Obor | Common | F2P | Hill giant club | 3
+Bryophyta | Common | F2P | Bryophyta's staff | 3
+Giant Mole | Common | P2P | Mole skin & claw | 3
+Scurrius | Common | P2P | Scurrius' spine & Scurry pet | 3
+Sarachnis | Common | P2P | Red spiders' eggs | 3
+Scorpius | Common | P2P | Scorpion boss | 3
+Barrows Brothers | Common | P2P | Barrows armour set | 3
+Brutus | Common | F2P | F2P boss unlocked by The Ides of Milk | 3
+Amoxliatl | Uncommon | P2P | Varlamore boss; Glacial temotli drop | 3
+Dagannoth Kings | Uncommon | P2P | Dragon axe & Berserker/Archers/Seers/Warrior rings | 3
+Kalphite Queen | Uncommon | P2P | Dragon chainbody | 3
+Crazy Archaeologist | Uncommon | P2P | Odium shard & ancient staff | 3
+Deranged Archaeologist | Uncommon | P2P | Ancient shard & odium shard | 3
+Skotizo | Uncommon | P2P | Dark totem pieces | 3
+Chaos Elemental | Uncommon | P2P | Dragon 2h & pet chaos elemental | 3
+General Graardor | Uncommon | P2P | Bandos tassets & chestplate | 3
+Commander Zilyana | Uncommon | P2P | Saradomin sword & Armadyl crossbow | 3
+Kree'arra | Uncommon | P2P | Armadyl armour | 3
+K'ril Tsutsaroth | Uncommon | P2P | Zamorakian hasta & staff of the dead | 3
+Zulrah | Uncommon | P2P | Tanzanite fang & magic fang | 3
+Calvar'ion | Uncommon | P2P | Vet'ion variant: Skull of Vet'ion & Voidwaker blade | 3
+Spindel | Uncommon | P2P | Venenatis variant: Fangs of Venenatis & Voidwaker gem | 3
+Artio | Uncommon | P2P | Callisto variant: Claws of Callisto & Voidwaker hilt | 3
+Mad Angel | Uncommon | P2P | Hallowfell Sword | 3
+Alchemical Hydra | Rare | P2P | Hydra leather + ring of suffering | 3
+Cerberus | Rare | P2P | Primordial crystals & eternal boots | 3
+Corporeal Beast | Rare | P2P | Spectral sigil & elysian sigil | 3
+Grotesque Guardians | Rare | P2P | Black tourmaline core | 3
+Kraken | Rare | P2P | Trident of the seas | 3
+Moons of Peril | Rare | P2P | Blood moon armour | 3
+The Hueycoatl | Rare | P2P | Tome of earth & dragon hunter wand | 3
+Callisto | Rare | P2P | Tyras helm & callisto cub | 3
+Venenatis | Rare | P2P | Dragon pickaxe | 3
+Vet'ion | Rare | P2P | Ring of the gods | 3
+Royal Titans | Rare | P2P | Fire/Ice element staff crowns | 3
+Doom of Mokhaiotl | Rare | P2P | Delve boss: Eye of Ayak & Mokhaiotl cloth | 3
+Hespori | Rare | P2P | Bottomless compost bucket & rare seeds | 3
+Thermonuclear Smoke Devil | Mythic | P2P | Occult necklace & smoke battlestaff | 3
+Phantom Muspah | Mythic | P2P | Ancient sceptre & venator ring | 3
+Vorkath | Mythic | P2P | Dragon hunter lance + Salve (ei) | 3
+Araxxor | Mythic | P2P | Noxious halberd & araxyte venom | 3
+Duke Sucellus | Mythic | P2P | Virtus robes & ancient sceptre | 3
+The Leviathan | Mythic | P2P | Virtus mask & robes | 3
+The Nightmare | Mythic | P2P | Inquisitor's armour | 3
+Nex | Mythic | P2P | Torva & ancient ceremonial | 3
+Vardorvis | Mythic | P2P | Araxor & venator bow | 3
+The Whisperer | Mythic | P2P | Virtus robes & vestige | 3
+TzKal-Zuk | Mythic | P2P | Infernal cape | 3
+Demonic Gorillas | Mythic | P2P | Zenyte shard farm | 3
+Tormented Demons | Mythic | P2P | Burning claws drop | 3
+Magot King | Mythic | P2P | Crimson Kisten | 3

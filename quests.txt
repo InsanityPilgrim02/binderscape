@@ -1,0 +1,183 @@
+# QUESTS — one card per line: Name | Rarity | F2P or P2P | Notes | Prerequisite cards | Skill levels
+# Prerequisite cards are separated by ; and must be names of other cards (usually quests). Skill levels look like: Mining 10; Smithing 20
+# Rarity: Common, Uncommon, Rare or Mythic. The last two columns are optional.
+# Lines starting with # and blank lines are ignored. Paste your own lines below to replace or extend.
+
+The Corsair Curse | Common | F2P | 1,200 Firemaking XP; Corsair Cove access
+Cook's Assistant | Common | F2P | 300 Cooking XP; Lumbridge cook's range
+Demon Slayer | Common | F2P | Silverlight Demonbane Weapon
+The Restless Ghost | Common | F2P | Ghostspeak Amulet & Early Prayer XP
+Romeo & Juliet | Common | F2P | 5 quest points
+Sheep Shearer | Common | F2P | 150 Crafting XP
+Shield of Arrav | Common | F2P | Gang choice needed for Heroes
+Ernest the Chicken | Common | F2P | 300 coins & 4 quest points
+Imp Catcher | Common | F2P | Amulet of Accuracy
+Prince Ali Rescue | Common | F2P | 500 Crafting XP; free Al Kharid gate
+Doric's Quest | Common | F2P | 1,300 Mining XP & 180 coins
+Witch's Potion | Common | F2P | 325 Magic XP
+Goblin Diplomacy | Common | F2P | 200 Crafting XP & gold bar
+Pirate's Treasure | Common | F2P | 800 Cooking XP; gold ring & emerald
+Rune Mysteries | Common | F2P | Unlocks Runecrafting
+Misthalin Mystery | Common | F2P | 600 Crafting XP
+X Marks the Spot | Common | F2P | 300 XP lamp; unlocks stackable clue steps
+Below Ice Mountain | Common | F2P | Barromite Mace and Camdozaal Vault access
+Druidic Ritual | Common | P2P | Herblore unlock
+Fishing Contest | Common | P2P | Perfect jubbly |  | Fishing 10
+Monk's Friend | Common | P2P | 2,000 Prayer XP
+Clock Tower | Common | P2P | 1,000 Firemaking XP; Ardougne diary prerequisite
+Sheep Herder | Common | P2P | 3,100 coins & 4 quest points
+Plague City | Common | P2P | 2,425 Mining XP; unlocks West Ardougne
+Hazeel Cult | Common | P2P | Hazeel cloak
+Biohazard | Common | P2P | 1,250 Thieving XP; West Ardougne passage | Plague City
+Jungle Potion | Common | P2P | Herblore secondaries | Druidic Ritual | Herblore 3
+Dwarf Cannon | Common | P2P | 750 Crafting XP; Dwarf multicannon
+Murder Mystery | Common | P2P | 1,406 Crafting XP & 3 quest points
+Gertrude's Cat | Common | P2P | 1,525 Cooking XP; lets you raise kittens & cats
+Elemental Workshop I | Common | P2P | 5,000 Crafting XP & Elemental shield |  | Smithing 20; Mining 20; Crafting 20
+Priest in Peril | Common | P2P | 1,406 Prayer XP & Wolfbane dagger; Morytania access
+Death Plateau | Common | P2P | 3,000 Attack XP & climbing boots
+Recruitment Drive | Common | P2P | 1,000 Agility XP & Initiate armour | Black Knights' Fortress; Druidic Ritual
+Enlightened Journey | Common | P2P | Balloon transport; Farming, Firemaking & Crafting XP |  | Firemaking 20; Farming 30; Crafting 36
+Eagles' Peak | Common | P2P | Eagle transport |  | Hunter 27
+Tower of Life | Common | P2P | 1,000 Construction & 500 Crafting XP |  | Construction 10
+Client of Kourend | Common | P2P | Kourend Castle teleport & Kharedst's memoirs
+A Porcine of Interest | Common | P2P | 1,000 Slayer XP; unlocks Sourhog Slayer tasks
+Children of the Sun | Common | P2P | Access to Varlamore
+The Ribbiting Tale of a Lily Pad Labour Dispute | Common | P2P | 2,000 Woodcutting XP & a new hardwood farming patch | Children of the Sun | Woodcutting 15
+Ethically Acquired Antiquities | Common | P2P | 6,000 Thieving XP | Children of the Sun; Shield of Arrav
+Current Affairs | Common | P2P | 1,000 Fishing XP; Sailing quest chain | Pandemonium | Fishing 10; Sailing 22
+Pandemonium | Common | P2P | Unlocks the Sailing skill
+Vampyre Slayer | Common | F2P | 4,825 Attack XP
+Black Knights' Fortress | Common | F2P | 2,500 coins & 3 quest points
+The Knight's Sword | Common | F2P | 12,725 Smithing XP |  | Mining 10
+Lost City | Common | P2P | Zanaris access & dragon longsword/dagger |  | Crafting 31; Woodcutting 36
+Witch's House | Common | P2P | 6,325 Hitpoints XP
+Merlin's Crystal | Common | P2P | Excalibur & 1,000 Firemaking XP
+Scorpion Catcher | Common | P2P | Kharidian headpiece |  | Prayer 31
+Tribal Totem | Common | P2P | Thieving xp |  | Thieving 21
+Temple of Ikov | Common | P2P | 8,000 Fletching XP; Boots of lightness or Armadyl pendant |  | Thieving 42; Ranged 40
+Holy Grail | Common | P2P | 15,300 Defence & 11,000 Prayer XP | Merlin's Crystal | Attack 20
+Tree Gnome Village | Common | P2P | 11,450 Attack XP & spirit tree access
+Fight Arena | Common | P2P | 12,175 Attack XP
+Sea Slug | Common | P2P | 7,175 Fishing XP; Fishing Platform access |  | Firemaking 30
+Waterfall Quest | Common | P2P | 13,750 Attack & Strength XP
+The Grand Tree | Common | P2P | 18,400 Attack & 7,900 Agility XP; gnome glider |  | Agility 25
+Shilo Village | Common | P2P | 3,875 Crafting XP; Shilo Village access | Jungle Potion | Crafting 20; Agility 32
+Observatory Quest | Common | P2P | Watchtower access
+The Tourist Trap | Common | P2P | Desert mining camp access; Desert Treasure I prerequisite |  | Fletching 10; Smithing 20
+Watchtower | Common | P2P | Watchtower teleport |  | Magic 14; Thieving 15; Agility 25; Mining 40
+The Dig Site | Common | P2P | Digsite pendant |  | Agility 10; Herblore 10; Thieving 25
+Big Chompy Bird Hunting | Common | P2P | Ogre bow & chompy hat |  | Fletching 5; Cooking 30; Ranged 30
+Nature Spirit | Common | P2P | 3,000 Crafting & 2,000 Defence XP; Mort Myre access | Priest in Peril; The Restless Ghost
+Troll Stronghold | Common | P2P | 2,000 Agility XP; Stronghold access & law runecrafting | Death Plateau | Agility 15
+Eadgar's Ruse | Common | P2P | Trollheim teleport | Druidic Ritual; Troll Stronghold | Herblore 31
+Shades of Mort'ton | Common | P2P | Serpentine helm | Priest in Peril | Crafting 20; Herblore 15; Firemaking 5
+The Fremennik Trials | Common | P2P | Fremennik helm |  | Fletching 25; Woodcutting 40; Crafting 40
+Horror from the Deep | Common | P2P | Book of the dead |  | Agility 35; Ranged 35
+Troll Romance | Common | P2P | 8,000 Agility XP | Troll Stronghold | Agility 28
+In Search of the Myreque | Common | P2P | 600 Attack, Defence & Crafting XP; Myreque hideout | Nature Spirit | Agility 25
+Creature of Fenkenstrain | Common | P2P | Canifis access | Priest in Peril; The Restless Ghost | Thieving 25; Crafting 20
+Ghosts Ahoy | Common | P2P | Ectophial teleport | Priest in Peril; The Restless Ghost | Agility 25; Cooking 20
+Mountain Daughter | Common | P2P | Bearhead & prayer book |  | Agility 20
+The Feud | Common | P2P | 15,000 Thieving XP; blackjacking |  | Thieving 30
+The Golem | Common | P2P | 1,000 Crafting XP; Uzer access |  | Thieving 20; Crafting 25
+Icthlarin's Little Helper | Common | P2P | 4,000 Agility XP; Sophanem access | Gertrude's Cat
+Tears of Guthix | Common | P2P | 1,000 Crafting XP; weekly XP in your lowest skill |  | Firemaking 20; Mining 20
+Zogre Flesh Eaters | Common | P2P | 2,000 Fletching XP; ogre bow & comp ogre bow | Big Chompy Bird Hunting; Jungle Potion | Smithing 4; Herblore 8; Ranged 30; Fletching 30
+The Lost Tribe | Common | P2P | Dorgeshuun access | Goblin Diplomacy; Rune Mysteries | Agility 13; Thieving 13; Mining 17
+The Giant Dwarf | Common | P2P | 2,500 Crafting & 1,500 Firemaking XP; Keldagrim access |  | Firemaking 16; Thieving 14; Crafting 12; Mining 33
+Forgettable Tale... | Common | P2P | 5,000 Cooking & Farming XP; Kelda stout | The Giant Dwarf; Fishing Contest | Cooking 22; Farming 17
+Garden of Tranquillity | Common | P2P | 5,000 Farming XP & Enchanted lyre | Creature of Fenkenstrain | Farming 25
+A Tail of Two Cats | Common | P2P | 2 × 2,500 XP (skill choice) | Icthlarin's Little Helper
+Wanted! | Common | P2P | 5,000 Slayer XP; White Knight armoury | Recruitment Drive; The Lost Tribe; Priest in Peril; Black Knights' Fortress
+Making History | Common | P2P | 1,000 Crafting XP
+Ratcatchers | Common | P2P | Rat pole | Icthlarin's Little Helper
+Spirits of the Elid | Common | P2P | Guthix staff |  | Thieving 37; Magic 33; Ranged 37; Prayer 37
+The Hand in the Sand | Common | P2P | 9,000 Crafting XP & Bert's sand deliveries
+Fairytale I - Growing Pains | Common | P2P | Magic secateurs; 3,500 Farming XP | Lost City; Nature Spirit
+In Aid of the Myreque | Common | P2P | 2,000 Attack/Defence/Crafting XP; Burgh de Rott access | In Search of the Myreque | Construction 25; Agility 7; Crafting 25; Mining 15; Magic 7; Attack 40; Defence 40; Strength 40
+A Soul's Bane | Common | P2P | 500 Defence XP; short Zamorak-themed quest
+Rag and Bone Man I | Common | P2P | 500 Cooking XP & Bonesack
+Death to the Dorgeshuun | Common | P2P | Dorgesh-Kaan access | The Lost Tribe | Agility 23; Thieving 23
+The Eyes of Glouphrie | Common | P2P | Crystal saw seed & 250 Construction XP | The Grand Tree | Construction 5; Magic 46
+The Slug Menace | Common | P2P | 3,500 Crafting XP & Proselyte armour | Sea Slug; Wanted! | Crafting 30; Runecrafting 30; Slayer 30; Thieving 30
+Elemental Workshop II | Common | P2P | 7,500 Crafting XP & Elemental helmet | Elemental Workshop I | Magic 20; Smithing 30
+What Lies Below | Common | P2P | Chaos altar access |  | Runecrafting 35
+Olaf's Quest | Common | P2P | 12,000 Defence XP |  | Firemaking 40; Woodcutting 50
+Another Slice of H.A.M. | Common | P2P | Dorgesh-Kaan–Keldagrim train system | Death to the Dorgeshuun; The Giant Dwarf; The Dig Site | Attack 15; Prayer 25
+Bone Voyage | Common | P2P | Fossil Island access |  | Construction 50
+The Queen of Thieves | Common | P2P | 10% Piscarilius favour | Client of Kourend
+The Depths of Despair | Common | P2P | 1,500 Agility XP; Kourend favour | Client of Kourend | Agility 18
+Tale of the Righteous | Common | P2P | 10% Shayzien favour | Client of Kourend | Strength 16; Mining 10
+The Forsaken Tower | Common | P2P | 10% Lovakengj favour | Client of Kourend | Magic 20; Thieving 20
+The Ascent of Arceuus | Common | P2P | Arceuus favour | Client of Kourend | Runecrafting 12; Hunter 12
+Getting Ahead | Common | P2P | 4,000 Crafting & 3,200 Construction XP |  | Crafting 30; Construction 26
+Temple of the Eye | Common | P2P | Unlocks the Guardians of the Rift minigame |  | Runecrafting 10
+Sleeping Giants | Common | P2P | Unlocks the Giants' Foundry minigame |  | Smithing 15
+The Garden of Death | Common | P2P | 10,000 Farming XP | Client of Kourend
+Twilight's Promise | Common | P2P | Quetzal transport, Civitas illa Fortis teleport & 3,000 Thieving XP | Children of the Sun
+At First Light | Common | P2P | Hunter Guild access & 800 Construction XP | Children of the Sun; Druidic Ritual; Eagles' Peak | Hunter 46; Herblore 30; Construction 27
+Death on the Isle | Common | P2P | 10,000 Thieving, 7,500 Agility & 5,000 Crafting XP | Children of the Sun | Thieving 43; Agility 32
+Scrambled! | Common | P2P | 5,000 Cooking & 5,000 Construction XP | Children of the Sun | Cooking 36; Construction 38; Smithing 35
+Prying Times | Common | P2P | Sailing XP – early boost (needs 12 Sailing) | Pandemonium; The Knight's Sword | Smithing 30; Sailing 12
+Cold War | Common | P2P | Clockwork suit & 5,000 Agility XP |  | Hunter 10; Agility 30; Crafting 30; Construction 34; Thieving 15
+The Ides of Milk | Common | F2P | Access to Brutus F2P Boss
+Shadow of the Storm | Common | P2P | Darklight upgrade for Silverlight, 10k combat XP | Demon Slayer; The Golem | Crafting 30
+Dragon Slayer I | Uncommon | F2P | 18,650 Defence XP; wear rune platebody & green d'hide body
+Heroes' Quest | Uncommon | P2P | Dragon battleaxe wield, ice gloves & Heroes' Guild | Shield of Arrav; Lost City; Merlin's Crystal; Dragon Slayer I; Druidic Ritual | Cooking 53; Fishing 53; Herblore 25; Mining 50
+Family Crest | Uncommon | P2P | 2,000 Crafting XP & Chaos gauntlets |  | Mining 40; Smithing 40; Crafting 40; Magic 59
+Underground Pass | Uncommon | P2P | 3,000 Agility & Attack XP; Iban's staff | Biohazard | Ranged 25
+Haunted Mine | Uncommon | P2P | Salve amulet | Priest in Peril | Crafting 15; Agility 35
+One Small Favour | Uncommon | P2P | Rune crossbow & iron oxide | Druidic Ritual; Rune Mysteries | Agility 36; Crafting 25; Herblore 18; Smithing 30
+Between a Rock... | Uncommon | P2P | Gold helmet & dwarf cannon upgrade | Fishing Contest; Dwarf Cannon | Defence 30; Mining 40; Smithing 50
+Regicide | Uncommon | P2P | 13,750 Agility XP; Tirannwn/Iorwerth access | Underground Pass | Agility 56
+Throne of Miscellania | Uncommon | P2P | 1,000 Farming & Fishing XP; unlocks Managing Miscellania | Heroes' Quest; The Fremennik Trials
+Monkey Madness I | Uncommon | P2P | Dragon scimitar | The Grand Tree; Tree Gnome Village
+Roving Elves | Uncommon | P2P | Crystal bow | Regicide; Waterfall Quest | Agility 56
+Rum Deal | Uncommon | P2P | 7,000 Farming & Fishing XP | Zogre Flesh Eaters | Crafting 42; Fishing 50; Prayer 47; Slayer 42; Farming 40
+Devious Minds | Uncommon | P2P | Stonemason access |  | Smithing 65; Runecrafting 50; Fletching 50
+Enakhra's Lament | Uncommon | P2P | 7,000 Crafting & Firemaking XP; Camulet |  | Crafting 50; Firemaking 45; Prayer 43; Magic 39
+Cabin Fever | Uncommon | P2P | 7,000 Agility & Crafting XP; Book o' piracy | Pirate's Treasure; Rum Deal | Agility 42; Crafting 45; Smithing 50; Ranged 40
+Royal Trouble | Uncommon | P2P | 5,000 Agility & Slayer XP; Miscellania throne room | Throne of Miscellania | Agility 40; Slayer 40
+Fairytale II - Cure a Queen | Uncommon | P2P | Unlocks the fairy ring network | Fairytale I - Growing Pains | Thieving 40; Farming 49; Herblore 57
+Lunar Diplomacy | Uncommon | P2P | Lunar spellbook | The Fremennik Trials; Lost City; Rune Mysteries; Shilo Village; Jungle Potion; Druidic Ritual; Eadgar's Ruse; Troll Stronghold | Crafting 61; Defence 40; Firemaking 49; Magic 65; Mining 60; Woodcutting 55
+Darkness of Hallowvale | Uncommon | P2P | 7,000 Agility & 2,000 Construction XP | In Aid of the Myreque | Construction 5; Mining 20; Agility 26; Thieving 22; Magic 33; Strength 40
+My Arm's Big Adventure | Uncommon | P2P | Farming xp & disease-free patch | Eadgar's Ruse; The Feud; Jungle Potion | Farming 29; Slayer 10; Woodcutting 31
+Contact! | Uncommon | P2P | Pollnivneach access | Icthlarin's Little Helper; Prince Ali Rescue; Gertrude's Cat; The Golem
+The Fremennik Isles | Uncommon | P2P | Helm of neitiznot | The Fremennik Trials | Construction 20; Agility 40; Woodcutting 56
+The Great Brain Robbery | Uncommon | P2P | Barrelchest anchor & 3,000 Crafting XP | Cabin Fever; Creature of Fenkenstrain; Rum Deal; Zogre Flesh Eaters | Crafting 16; Construction 30; Prayer 50
+King's Ransom | Uncommon | P2P | 33,000 Defence XP; Piety (after Knight Waves) | Black Knights' Fortress; Holy Grail; Merlin's Crystal; Murder Mystery; One Small Favour | Magic 45; Defence 65
+Rag and Bone Man II | Uncommon | P2P | Ram skull helm | Rag and Bone Man I; Zogre Flesh Eaters | Slayer 40; Prayer 20; Cooking 20
+A Taste of Hope | Uncommon | P2P | 2,500 XP (skill choice) & Drakan's medallion | Darkness of Hallowvale | Agility 45; Attack 40; Crafting 48; Herblore 40; Slayer 38
+A Kingdom Divided | Uncommon | P2P | 10,000 XP (skill choice) & 24 Arceuus spells | Client of Kourend | Agility 54; Thieving 52; Woodcutting 52; Herblore 50; Mining 42; Crafting 38; Magic 35
+Land of the Goblins | Uncommon | P2P | 8,000 Agility, Fishing & Thieving XP | Another Slice of H.A.M.; Fishing Contest; Goblin Diplomacy; The Lost Tribe | Agility 38; Fishing 38; Thieving 36
+The Path of Glouphrie | Uncommon | P2P | 20,000 Slayer XP | The Eyes of Glouphrie; Waterfall Quest | Construction 60; Strength 45; Slayer 60
+Defender of Varrock | Uncommon | P2P | Required for The Curse of Arrav | Family Crest; The Knight's Sword; Shield of Arrav; Demon Slayer; Temple of Ikov | Mining 59; Smithing 59; Fishing 55; Hunter 52; Thieving 54; Magic 59
+The Heart of Darkness | Uncommon | P2P | 8,000 Mining, Thieving & Agility XP | Twilight's Promise | Mining 55; Thieving 48; Slayer 48; Agility 46
+Meat and Greet | Uncommon | P2P | 8,000 Cooking & Thieving XP | Children of the Sun
+Troubled Tortugans | Uncommon | P2P | Sailing quest; opens the Tortugan island | Pandemonium | Slayer 51; Construction 48; Sailing 45; Hunter 45; Woodcutting 40; Crafting 34
+Shadows of Custodia | Uncommon | P2P | 3,000 Construction & Fishing XP | Children of the Sun | Slayer 54; Fishing 45; Construction 41; Hunter 36
+The Red Reef | Uncommon | P2P | Access to Ancient Grove | Troubled Tortugans | Sailing 52; Mining 48
+Fallen From Grace | Uncommon | P2P | 10,000 Crafting XP & Wyrmscraig access | Pandemonium | Sailing 62; Mining 53; Runecrafting 47; Crafting 60
+Legends' Quest | Rare | P2P | Quest point cape req | Family Crest; Heroes' Quest; Underground Pass; Waterfall Quest; Shilo Village | Agility 50; Crafting 50; Herblore 45; Magic 56; Mining 52; Prayer 42; Smithing 50; Strength 50; Thieving 50; Woodcutting 50
+Desert Treasure I | Rare | P2P | Ancient magicks unlock | The Dig Site; Druidic Ritual; Temple of Ikov; The Tourist Trap; Troll Stronghold; Priest in Peril | Thieving 53; Firemaking 50; Slayer 10; Magic 50
+Mourning's End Part I | Rare | P2P | Unlocks Mourning's End Part II (Song of the Elves chain) | Roving Elves; Big Chompy Bird Hunting; Sheep Herder | Ranged 60; Thieving 50
+Mourning's End Part II | Rare | P2P | 60,000 Agility XP; Song of the Elves prerequisite | Mourning's End Part I
+Swan Song | Rare | P2P | 50,000 Fishing XP | One Small Favour; Garden of Tranquillity | Cooking 62; Fishing 62; Smithing 45; Firemaking 42; Crafting 40; Magic 66
+Dream Mentor | Rare | P2P | Hitpoints & Magic XP; required for While Guthix Sleeps | Lunar Diplomacy; Eadgar's Ruse
+Grim Tales | Rare | P2P | Witchwood icon & 25,000 Agility XP | Witch's House | Farming 45; Herblore 52; Thieving 58; Agility 59; Woodcutting 71
+Making Friends with My Arm | Rare | P2P | 50,000 Agility, 40,000 Firemaking XP; Weiss access | My Arm's Big Adventure; Swan Song; Cold War; Romeo & Juliet | Firemaking 66; Mining 72; Construction 35; Agility 68
+A Night at the Theatre | Rare | P2P | Vyre storyline part 3; unlocks The Blood Moon Rises | Sins of the Father
+Sins of the Father | Rare | P2P | Blisterwood flail & Darkmeyer teleport | A Taste of Hope | Woodcutting 62; Fletching 60; Crafting 56; Agility 52; Attack 50; Slayer 50; Magic 49
+Beneath Cursed Sands | Rare | P2P | Tombs of Amascut access; 50,000 Agility XP | Contact! | Firemaking 62; Agility 55; Thieving 47; Prayer 55; Crafting 55
+Perilous Moons | Rare | P2P | 40,000 Slayer XP; Moons of Peril access | Twilight's Promise | Slayer 48; Hunter 20; Fishing 20; Runecrafting 20; Construction 10
+The Curse of Arrav | Rare | P2P | 40,000 Agility XP | Defender of Varrock; Troll Romance | Mining 64; Ranged 62; Thieving 62; Agility 61; Strength 58; Slayer 37
+The Final Dawn | Rare | P2P | 25,000 Fletching XP; Varlamore story finale | The Heart of Darkness; Perilous Moons | Thieving 66; Runecrafting 52; Fletching 52
+Recipe for Disaster | Rare | P2P | Barrows gloves | Cook's Assistant; Fishing Contest; Goblin Diplomacy; Big Chompy Bird Hunting; Murder Mystery; Nature Spirit; Witch's House; Gertrude's Cat; Shadow of the Storm; Legends' Quest; Desert Treasure I; Monkey Madness I; Horror from the Deep | Cooking 70; Agility 48; Firemaking 20
+Secrets of the North | Rare | P2P | 60,000 Agility XP; required for Desert Treasure II | Making Friends with My Arm; Devious Minds; Hazeel Cult | Agility 69; Thieving 64; Hunter 56
+Monkey Madness II | Mythic | P2P | Demonic gorillas & heavy ballista; 60,000 Agility XP | Enlightened Journey; The Eyes of Glouphrie; Troll Stronghold; Watchtower; Tree Gnome Village; The Grand Tree | Slayer 69; Hunter 60; Agility 55; Thieving 55
+Song of the Elves | Mythic | P2P | Prifddinas; 40,000 Agility, Construction & Farming XP | Mourning's End Part II | Agility 70; Construction 70; Farming 70; Herblore 70; Hunter 70; Mining 70; Smithing 70; Woodcutting 70
+Dragon Slayer II | Mythic | P2P | Access to Vorkath; 50,000 Agility XP | Legends' Quest | Magic 75; Smithing 70; Mining 68; Crafting 62; Agility 60; Thieving 60; Construction 50; Hitpoints 50
+Desert Treasure II - The Fallen Empire | Mythic | P2P | Access to Vardorvis, Duke Sucellus, The Leviathan & The Whisperer | Secrets of the North | Firemaking 75; Magic 75; Thieving 70; Hunter 70; Agility 70; Fletching 70; Construction 60; Prayer 60
+While Guthix Sleeps | Mythic | P2P | 75,000 Farming XP; Guthix storyline finale | Dream Mentor | Attack 65; Strength 65; Defence 65; Hitpoints 65; Ranged 65; Magic 70; Prayer 70; Herblore 65; Thieving 70; Farming 65; Hunter 65; Slayer 65
+The Blood Moon Rises | Mythic | P2P | Castle Drakan teleport & Vampyrium access | A Night at the Theatre; Sins of the Father | Slayer 74; Woodcutting 74; Smithing 72; Cooking 72; Fletching 70; Magic 57; Mining 66; Herblore 64; Hunter 65; Crafting 64

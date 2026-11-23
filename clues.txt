@@ -1,0 +1,11 @@
+# CLUE SCROLLS — one card per line: Name | Rarity | F2P or P2P | Notes | Timer (hours)
+# Timer = hours before the card auto-discards. Leave it blank (or 0) for the default of 3 hours.
+# Master Clue / Elite Clue are favoured by Clue Dust Packs, so keep those exact names if you have them.
+# Lines starting with # and blank lines are ignored. Paste your own lines below to replace or extend.
+
+Beginner Clue | Common | F2P | Beginner casket | 3
+Easy Clue | Common | P2P | Easy casket | 3
+Medium Clue | Uncommon | P2P | Medium casket | 3
+Hard Clue | Uncommon | P2P | Hard casket | 3
+Elite Clue | Rare | P2P | Elite casket | 3
+Master Clue | Mythic | P2P | Master casket | 3

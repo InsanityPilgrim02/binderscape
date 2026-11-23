@@ -1,0 +1,11 @@
+# COMBAT ACHIEVEMENTS — one card per line: Name | Rarity | F2P or P2P | Notes | Prerequisite cards | Skill levels
+# Each tier lists the previous tier as its prerequisite. Same column rules as Quests.
+# The Mythic drop-rate bonus counts completed cards named "<Easy|Medium|Hard|Elite|Master|Grandmaster> Combat Achievements".
+# Lines starting with # and blank lines are ignored. Paste your own lines below to replace or extend.
+
+Easy Combat Achievements | Common | P2P | Improved Boss Slayer, Additional Void Knight Points & Warrior Guild Tokens
+Medium Combat Achievements | Common | P2P | Improved Boss Slayer, Prayer drain at Barrows removed, Increased Cannonballs in Cannon, More Void Knight Points & Warrior Guild Tokens | Easy Combat Achievements
+Hard Combat Achievements | Uncommon | P2P | Improved Boss Slayer, Unlimited Teleports to God Wars Dungeon, Halved Nightmare Zone costs, Even more Void Knight Points and Cannonballs stored in Cannon | Medium Combat Achievements
+Elite Combat Achievements | Uncommon | P2P | Improved Boss Slayer, Improved Superior Monster chance and EVEN More Cannonballs for Cannon | Hard Combat Achievements
+Master Combat Achievements | Rare | P2P | Improved Boss Slayer, Access to the Avernic Defender, Tralls have double the duration, God Wars Benefits | Elite Combat Achievements
+Grandmaster Combat Achievements | Mythic | P2P | Improved Boss Slayer, Unlimited Teleports to Mor Ul Rek, More God Wars benefits, Maxed Avernic Defender, Max mythic drop rate boost | Master Combat Achievements

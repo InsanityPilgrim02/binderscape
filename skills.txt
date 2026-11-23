@@ -1,0 +1,125 @@
+# SKILLS — one card per line: Name | Rarity | F2P or P2P | Notes (reward / unlock text)
+# Names must be "1-<tier> <Skill>" with tier 10 (Starter), 25 (Common), 50 (Uncommon), 75 (Rare) or 99 (Mythic). Tier 10 must be Starter; the others must not.
+# Add a skill by adding all five tiers. Only the highest tier you own is kept; each tier needs the previous tier's level (10 → 25 → 50 → 75 → 99).
+# Lines starting with # and blank lines are ignored. Paste your own lines below to replace or extend.
+
+1-10 Attack | Starter | F2P | Steel (5) & black (10) weapons
+1-25 Attack | Common | F2P | Mithril weapons (20); Holy Grail needs 20
+1-50 Attack | Uncommon | F2P | Adamant (30) & rune (40) weapons
+1-75 Attack | Rare | P2P | Dragon weapons (60), abyssal whip (70), godswords (75)
+1-99 Attack | Mythic | P2P | Attack cape; 13,034,431 XP
+1-10 Hitpoints | Starter | F2P | Starting level (10 HP) – every level adds 1 max HP
+1-25 Hitpoints | Common | F2P | 25 max HP; XP comes with all melee/ranged/magic training
+1-50 Hitpoints | Uncommon | F2P | 50 max HP; handles most low/mid bosses
+1-75 Hitpoints | Rare | P2P | 75 max HP; most mid-game bosses viable
+1-99 Hitpoints | Mythic | P2P | Hitpoints cape; 13,034,431 XP
+1-10 Mining | Starter | F2P | Steel pickaxe (6); copper, tin & clay
+1-25 Mining | Common | F2P | Iron (15), silver (20) & mithril pickaxe (21)
+1-50 Mining | Uncommon | F2P | Coal (30), adamant pickaxe (31), gold (40), rune pickaxe (41)
+1-75 Mining | Rare | P2P | Mithril ore (55), dragon pickaxe (61), adamantite (70)
+1-99 Mining | Mythic | P2P | Mining cape; 13,034,431 XP
+1-10 Strength | Starter | F2P | Higher melee max hit; Waterfall Quest XP helps early
+1-25 Strength | Common | F2P | Higher max hits with mid-tier weapons
+1-50 Strength | Uncommon | F2P | Attack+Strength 130 opens the Warriors' Guild
+1-75 Strength | Rare | P2P | Bigger max hits with whip/godswords
+1-99 Strength | Mythic | P2P | Strength cape; 13,034,431 XP
+1-10 Agility | Starter | P2P | Gnome Stronghold course (1) & Draynor rooftops (10)
+1-25 Agility | Common | P2P | Al Kharid rooftops (20); The Grand Tree needs 25
+1-50 Agility | Uncommon | P2P | Varrock (30), Canifis (40) & Falador (50) rooftops
+1-75 Agility | Rare | P2P | Seers' Village (60) & Pollnivneach (70) rooftops
+1-99 Agility | Mythic | P2P | Agility cape; 13,034,431 XP
+1-10 Smithing | Starter | F2P | Bronze bars & blurite (8)
+1-25 Smithing | Common | F2P | Iron bars (15); Elemental Workshop I needs 20
+1-50 Smithing | Uncommon | F2P | Steel (30), cannonballs (35) & mithril (50)
+1-75 Smithing | Rare | P2P | Blast Furnace (60) & adamant (70)
+1-99 Smithing | Mythic | P2P | Smithing cape; 13,034,431 XP
+1-10 Defence | Starter | F2P | Steel (5) & black (10) armour
+1-25 Defence | Common | F2P | Mithril armour (20)
+1-50 Defence | Uncommon | F2P | Adamant (30) & rune (40) armour
+1-75 Defence | Rare | P2P | Dragon armour & defender (60), Barrows (70)
+1-99 Defence | Mythic | P2P | Defence cape; 13,034,431 XP
+1-10 Herblore | Starter | P2P | Attack potion (3) & antipoison (5)
+1-25 Herblore | Common | P2P | Strength potion (12) & restore stat (22)
+1-50 Herblore | Uncommon | P2P | Prayer potion (38) & super attack (45)
+1-75 Herblore | Rare | P2P | Super restore (63), antifire (69) & ranging potion (72)
+1-99 Herblore | Mythic | P2P | Herblore cape; 13,034,431 XP
+1-10 Fishing | Starter | F2P | Shrimp, sardines & herring; Fishing Contest (10)
+1-25 Fishing | Common | F2P | Trout (20) & pike (25) fly fishing
+1-50 Fishing | Uncommon | F2P | Salmon (30), lobster (40) & swordfish (50)
+1-75 Fishing | Rare | P2P | Monkfish (62), karambwan (65) & Fishing Guild (68)
+1-99 Fishing | Mythic | P2P | Fishing cape; 13,034,431 XP
+1-10 Ranged | Starter | F2P | Oak shortbow (5) & leather armour
+1-25 Ranged | Common | F2P | Willow bows (20) & studded leather
+1-50 Ranged | Uncommon | F2P | Maple/yew bows, green d'hide (40) & magic shortbow (50)
+1-75 Ranged | Rare | P2P | Rune/dragon crossbow (61/64), Karil's (70), blowpipe (75)
+1-99 Ranged | Mythic | P2P | Ranging cape; 13,034,431 XP
+1-10 Thieving | Starter | P2P | Man/woman, farmer (10) & cake stall
+1-25 Thieving | Common | P2P | Al Kharid warriors (25)
+1-50 Thieving | Uncommon | P2P | Master Farmers (38) for seeds; guards (40)
+1-75 Thieving | Rare | P2P | Ardougne knights (55) & Menaphite thugs (blackjack)
+1-99 Thieving | Mythic | P2P | Thieving cape; 13,034,431 XP
+1-10 Cooking | Starter | F2P | Shrimp, sardines & herring; Cook's Assistant XP
+1-25 Cooking | Common | F2P | Trout (15), salmon (25) & meat pies (20)
+1-50 Cooking | Uncommon | F2P | Tuna (30), lobster (40) & Cooking Guild (32)
+1-75 Cooking | Rare | P2P | Monkfish (62); Recipe for Disaster Awowogei needs 70
+1-99 Cooking | Mythic | P2P | Cooking cape – acts as cooking gauntlets (fewer burns); 13,034,431 XP
+1-10 Prayer | Starter | F2P | Thick Skin, Burst of Strength, Clarity of Thought, Rock Skin (10)
+1-25 Prayer | Common | F2P | Superhuman Strength (13), Rapid Heal (22) & Protect Item (25)
+1-50 Prayer | Uncommon | F2P | Protect from Magic (37), Missiles (40) & Melee (43)
+1-75 Prayer | Rare | P2P | Piety (70) & Rigour (74)
+1-99 Prayer | Mythic | P2P | Prayer cape; 13,034,431 XP
+1-10 Crafting | Starter | F2P | Gold rings/amulets (5–8) & leather gear
+1-25 Crafting | Common | F2P | Sapphire jewellery (20); The Golem needs 20
+1-50 Crafting | Uncommon | F2P | Crafting Guild (40) & diamond jewellery (43)
+1-75 Crafting | Rare | P2P | Dragonstone (55) & onyx (67) jewellery
+1-99 Crafting | Mythic | P2P | Crafting cape – teleports to the Crafting Guild; 13,034,431 XP
+1-10 Firemaking | Starter | F2P | Regular logs; Clock Tower gives 1,000 XP
+1-25 Firemaking | Common | F2P | Oak logs (15); Enlightened Journey needs 20
+1-50 Firemaking | Uncommon | F2P | Willow (30), maple (45) & Wintertodt (50)
+1-75 Firemaking | Rare | P2P | Yew (60) & magic logs (75)
+1-99 Firemaking | Mythic | P2P | Firemaking cape; 13,034,431 XP
+1-10 Magic | Starter | F2P | Wind/Water/Earth Strike (1/5/9) & Enchant (7)
+1-25 Magic | Common | F2P | Fire Strike (13), low alch (21) & Varrock Teleport (25)
+1-50 Magic | Uncommon | F2P | Superheat (43), Camelot Tele (45) & Iban's Blast (50)
+1-75 Magic | Rare | P2P | High Alchemy (55), Fire Blast (59) & Fire Wave (75)
+1-99 Magic | Mythic | P2P | Magic cape; 13,034,431 XP
+1-10 Fletching | Starter | P2P | Shortbows (5) & longbows (10)
+1-25 Fletching | Common | P2P | Oak bows (20–25)
+1-50 Fletching | Uncommon | P2P | Willow (35–40) & maple shortbow (50)
+1-75 Fletching | Rare | P2P | Yew bows (65–70)
+1-99 Fletching | Mythic | P2P | Fletching cape; 13,034,431 XP
+1-10 Woodcutting | Starter | F2P | Normal trees; steel axe (6)
+1-25 Woodcutting | Common | F2P | Oak (15) & mithril axe (21)
+1-50 Woodcutting | Uncommon | F2P | Willow (30), maple (45) & rune axe (41)
+1-75 Woodcutting | Rare | P2P | Yew (60), dragon axe (61) & magic trees (75)
+1-99 Woodcutting | Mythic | P2P | Woodcutting cape; 13,034,431 XP
+1-10 Runecrafting | Starter | F2P | Air, mind, water & earth runes
+1-25 Runecrafting | Common | F2P | Fire (14) & body (20) runes; medium pouch (25)
+1-50 Runecrafting | Uncommon | F2P | Cosmic (27), chaos (35) & nature (44); large pouch (50)
+1-75 Runecrafting | Rare | P2P | Law (54) & death (65) runes; giant pouch (75)
+1-99 Runecrafting | Mythic | P2P | Runecrafting cape; 13,034,431 XP
+1-10 Slayer | Starter | P2P | Turael tasks; banshees (15)
+1-25 Slayer | Common | P2P | Mazchna (20), rock slugs (20) & cockatrice (25)
+1-50 Slayer | Uncommon | P2P | Vannaka (40), basilisks (40) & bloodveld (50)
+1-75 Slayer | Rare | P2P | Aberrant spectres (60), kurask (70), gargoyles & Konar (75)
+1-99 Slayer | Mythic | P2P | Slayer cape; 13,034,431 XP
+1-10 Farming | Starter | P2P | Allotments & herb patch (Guam 9)
+1-25 Farming | Common | P2P | Oak trees (15) & sweetcorn (20)
+1-50 Farming | Uncommon | P2P | Farming Guild (45) & maple trees (45)
+1-75 Farming | Rare | P2P | Yew (60), snapdragon (62) & magic trees (75)
+1-99 Farming | Mythic | P2P | Farming cape – teleports to the Farming Guild; 13,034,431 XP
+1-10 Construction | Starter | P2P | Build a house (5); Tower of Life needs 10
+1-25 Construction | Common | P2P | Workshop (15), bedroom (20) & oak furniture
+1-50 Construction | Uncommon | P2P | Study (40), chapel (45) & portal chamber (50)
+1-75 Construction | Rare | P2P | Mahogany furniture (52) & superior garden (65)
+1-99 Construction | Mythic | P2P | Construction cape – teleports to your house; 13,034,431 XP
+1-10 Hunter | Starter | P2P | Bird snares & birdhouses (5)
+1-25 Hunter | Common | P2P | Deadfall/box traps; Eagles' Peak needs 27
+1-50 Hunter | Uncommon | P2P | Falconry (43) & At First Light (46)
+1-75 Hunter | Rare | P2P | Chinchompas (53), red (63) & black chinchompas (73)
+1-99 Hunter | Mythic | P2P | Hunter cape – can teleport to the Hunter Guild; 13,034,431 XP
+1-10 Sailing | Starter | P2P | Starter raft; sea charting & port tasks (2nd task slot at 7)
+1-25 Sailing | Common | P2P | Skiff (15), shipwreck salvaging & a 2nd boat slot
+1-50 Sailing | Uncommon | P2P | Sloop (50) & a 3rd boat slot
+1-75 Sailing | Rare | P2P | Late-game boat upgrades; 4th boat slot at 78
+1-99 Sailing | Mythic | P2P | Sailing cape – rename your boat any time; 13,034,431 XP

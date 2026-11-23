@@ -1,0 +1,63 @@
+# MINIGAMES — one card per line: Name | Rarity | F2P or P2P | Notes | Timer (hours)
+# Timer = hours before the card auto-discards. Leave it blank (or 0) for the default of 3 hours.
+# Lines starting with # and blank lines are ignored. Paste your own lines below to replace or extend.
+
+Shooting Stars | Common | F2P | Mine Stardust for valuable rewards | 3
+Spawn Hopping | Common | F2P | Steel Platelegs/bodies in wildy etc | 3
+Camdozaal Vault | Common | F2P | Timed Event for valuable rewards | 3
+Forestry | Common | F2P | Random Events specific to Woodcutting | 3
+Burthorpe Games Room | Common | P2P | Classic minigames | 3
+Vale Totems | Common | P2P | Fletching & Woodcutting XP | 3
+Golem Crafting | Common | P2P | Crafting XP & Jeweller's chisel | 3
+Mess | Common | P2P | Cooking minigame | 3
+Impetuous Impulses | Common | P2P | Hunter XP & impling jar rewards (chisel to dragon arrows) | 3
+Blast Furnace | Common | P2P | Fastest smithing xp | 3
+Brimhaven Agility Arena | Common | P2P | Agility xp + ticket shop | 3
+Castle Wars | Common | F2P | Capture the Flag Safe PVP | 3
+Clan Wars | Common | F2P | Clan PVP | 3
+Emir's Arena | Common | F2P | Safe PVP to get Imbue & Surge Scrolls | 3
+Fishing Trawler | Common | P2P | Angler outfit | 3
+Gnome Ball | Common | P2P | Agility xp | 3
+Gnome Restaurant | Common | P2P | Cooking xp & gnome items | 3
+Mage Training Arena | Common | P2P | Bones to peaches & infinity robes | 3
+Pest Control | Common | P2P | Void knight equipment | 3
+Sorceress's Garden | Common | P2P | Thieving & Farming XP; sq'irk juice & herbs | 3
+Temple Trekking | Common | P2P | Morytania access | 3
+TzHaar Fight Pit | Common | P2P | Tokkul & obsidian | 3
+Nightmare Zone | Common | P2P | Ring imbues, absorption/overload potions & combat XP | 3
+Blast Mine | Uncommon | P2P | Mining + agility xp | 3
+Barbarian Assault | Uncommon | P2P | Fighter torso & penance gear | 3
+Giants' Foundry | Uncommon | P2P | Smithing xp + double ammo mould | 3
+Guardians of the Rift | Uncommon | P2P | Abyssal pearls & outfit | 3
+Mage Arena | Uncommon | P2P | God staves & mage arena 1 | 3
+Mahogany Homes | Uncommon | P2P | Construction xp + outfit | 3
+Pyramid Plunder | Uncommon | P2P | Sceptre of the gods & thieving xp | 3
+Rogues' Den | Uncommon | P2P | Rogue outfit & minigame | 3
+Shades of Mort'ton Minigame | Uncommon | P2P | Flamtaer bracelet | 3
+Soul Wars | Uncommon | P2P | Zeal tokens & soul cape | 3
+Trouble Brewing | Uncommon | P2P | Honest Jimmy's hat | 3
+Volcanic Mine | Uncommon | P2P | Mining xp & volcanic ash | 3
+Wintertodt | Uncommon | P2P | Pyromancer outfit + firemaking xp | 3
+Tempoross | Uncommon | P2P | Harpoonfish & spirit angler outfit | 3
+Tithe Farm | Uncommon | P2P | Golovanova → Bologano seeds | 3
+Bounty Hunter | Uncommon | P2P | Emblems & ancient artefacts | 3
+Intelligence Gathering | Uncommon | P2P | Varlamore minigame | 3
+Last Man Standing | Uncommon | F2P | Valuable rewards via Safe PVP | 3
+Archery Competition | Uncommon | P2P | Ranged XP & archery tickets (e.g. rune arrows) | 3
+Managing Miscellania | Uncommon | P2P | Passive herbs/wood income | 3
+Stealing Artefacts | Uncommon | P2P | Thieving xp | 3
+Stealing Valuables | Uncommon | P2P | Thieving xp | 3
+Hallowed Sepulchre | Rare | P2P | Graceful outfit + strange old lockpick | 3
+TzHaar Fight Cave | Rare | P2P | Fire cape | 3
+Mastering Mixology | Rare | P2P | Herblore XP & alchemist's outfit | 3
+Theatre of Blood Normal Mode | Rare | P2P | Scythe of Vitur | 3
+The Gauntlet | Rare | P2P | BOWFA | 3
+Tombs of Amascut Entry/Normal Mode | Rare | P2P | Masori & Tumeken's shadow | 3
+Chambers of Xeric Normal Mode | Rare | P2P | Twisted bow & olm pet | 3
+Inferno | Mythic | P2P | Jad pet & infernal cape | 3
+Fortis Colosseum | Mythic | P2P | Sunfire fanatic armour | 3
+The Corrupted Gauntlet | Mythic | P2P | BOWFA | 3
+Zalcano | Mythic | P2P | Tanzanite fang & crystal tool | 3
+Chambers of Xeric Challenge Mode | Mythic | P2P | Twisted bow & olm pet | 3
+Theatre of Blood Hard Mode | Mythic | P2P | Scythe of Vitur | 3
+Tombs of Amascut Expert Mode | Mythic | P2P | Masori & Tumeken's shadow | 3
