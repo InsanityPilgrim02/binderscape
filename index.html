@@ -6,7 +6,7 @@
 <title>BinderScape</title>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#14161a">
-<meta name="bs-build" content="2026-11-24.1">   <!-- bump on every release: the update check compares this against the server copy -->
+<meta name="bs-build" content="2026-11-24.2">   <!-- bump on every release: the update check compares this against the server copy -->
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -26,10 +26,14 @@ input[type=text]{min-width:0}
 input[type=checkbox]{accent-color:var(--amber);width:auto}
 main{max-width:1400px;margin:0 auto;padding:20px;display:grid;gap:20px}
 .box{background:var(--panel);border:1px solid var(--line);border-radius:10px;padding:16px}
-.stats{display:grid;gap:14px;text-align:center;justify-items:center}
+.stats{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:center;justify-content:center;padding:8px 14px;text-align:center}
+.stats .comp{width:auto;font-size:14px;gap:3px}
+.stats .row{gap:6px}
+.stats .chip{padding:2px 9px;font-size:12px}
+.stats .seg button{padding:4px 10px;font-size:12px}
 .price{font-size:18px;font-weight:700}.price small{display:block;font-weight:400;font-size:13px;color:var(--mute)}
 .price b{color:var(--amber)}
-.stats .bar{width:min(520px,100%)}
+.stats .bar{width:min(220px,100%);height:10px}
 .bar{height:14px;background:var(--ink);border:1px solid var(--line);border-radius:8px;overflow:hidden}
 .bar i{display:block;height:100%;width:0;background:var(--amber);transition:width .5s ease}
 .comp{font-size:16px;font-weight:700;display:grid;gap:6px;justify-items:center;width:100%}
@@ -42,6 +46,27 @@ main{max-width:1400px;margin:0 auto;padding:20px;display:grid;gap:20px}
 .sec h2{text-align:center}
 .prog{display:grid;gap:4px;justify-items:center;color:var(--mute);font-size:13px}
 .prog .bar{width:min(300px,80%)}
+.cols{display:grid;grid-template-columns:2fr 1fr;gap:20px;align-items:start}
+.colL,.colR{display:grid;gap:20px;min-width:0}
+@media(max-width:900px){.cols{grid-template-columns:1fr}.colR{order:-1}}
+/* Wide screens: the page is exactly one screen tall (no page scrollbar). The two card boxes share what is left,
+   and the skill cards are sized so exactly 4 rows fill the Skills box. */
+@media(min-width:901px){
+ body{height:100vh;height:100dvh;display:flex;flex-direction:column}
+ header.top{flex:none}
+ main{flex:1;min-height:0;width:100%;grid-template-rows:auto minmax(0,1fr);padding-top:12px;padding-bottom:28px;gap:12px}
+ .cols{min-height:460px;height:100%;grid-template-rows:minmax(0,1fr);align-items:stretch}
+ .colL,.colR{min-height:0;grid-template-rows:minmax(0,1fr)}
+ .box.sec{min-height:0;grid-template-rows:auto auto minmax(0,1fr)}
+ .cols .cards{max-height:none;height:100%}
+ .card.skillcard{height:var(--sh,150px)}
+ #c-bmc .card{height:var(--bh,210px);min-height:0}
+}
+.cols .cards{max-height:max(646px,calc(100vh - 290px));min-height:0}
+#c-sk{grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.card.skillcard{padding:6px 6px 5px;gap:1px;height:150px;min-height:0;content-visibility:visible}   /* only 24 cards: always render them all, so none go blank while scrolling */
+.skillcard .typ{display:none}
+.skillcard .rar{font-size:11px;line-height:1.2}
 .cards{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:12px;align-content:start;min-height:280px;max-height:50vh;overflow:auto;padding:4px}
 .Starter{--c:var(--line)}
 .Common{--c:color-mix(in srgb,var(--mute) 45%,var(--ink))}
@@ -133,47 +158,35 @@ header.top label.qty{display:none}
 .buy-grid button b{font-size:15px}.buy-grid button span{font-weight:600}.buy-grid button small{font-weight:600;opacity:.75}
 .dgrid button{padding:10px}
 .setup-h{margin:22px 0 4px;font:800 16px/1 "Arial Narrow","Franklin Gothic Medium",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
-.setup h4{margin:14px 0 6px}
+.mb h4{margin:14px 0 6px}
 .saves+.hint{margin-top:10px}
 .price{font-size:15px;margin:6px 0 0}.price small{display:block;color:var(--mute);font-size:12px;font-weight:400}
 .mb .comp{margin:6px 0}
-.setup{display:grid;gap:12px}
-.setup #cards-det details{margin-bottom:8px;background:var(--ink)}
+#cards-det details{margin-bottom:8px;background:var(--ink)}
+.skillcard{gap:4px}
+.sico{position:relative;flex:1;min-height:0}
+.sicon{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;image-rendering:pixelated}
+.sbot{display:flex;flex-wrap:wrap;justify-content:center;align-items:baseline;gap:0 6px}
+.sname{color:var(--mute);font-size:12px;line-height:1.1}
+.snum{font-size:14px;font-weight:700;line-height:1.1}
+.ticon{display:block;margin:4px auto 0;width:36px;height:36px;object-fit:contain;image-rendering:pixelated}
+.ip{display:flex;flex-direction:column;align-items:center;gap:3px;min-width:76px;padding:8px;background:var(--ink);border:1px solid var(--line);border-radius:6px}
+.ip small{color:var(--mute)}
+#icon-src{font:12px monospace}
 
 </style>
 </head>
 <body>
 <header class="top">
  <h1>BinderScape</h1>
+ <span class="sp"></span>
  <button id="buy-btn" data-open="buy-modal">Buy packs!</button>
  <button data-open="log-modal">Collection Log</button>
  <button data-open="activity-modal">Activity Log</button>
- <span class="sp"></span>
  <button data-open="settings-modal">Settings</button>
 </header>
-<div id="empty" class="box empty-note" hidden><h2>No card data loaded</h2><p class="hint">BinderScape doesn't include any cards. Paste your card lists into the Card Data sections at the bottom of the page to start playing.</p><button id="empty-btn">Go to Card Data</button></div>
+<div id="empty" class="box empty-note" hidden><h2>No card data loaded</h2><p class="hint">BinderScape doesn't include any cards. Paste your card lists into Settings → Card Data to start playing.</p><button id="empty-btn">Go to Card Data</button></div>
 <main>
- <div class="setup" id="setup">
-  <details id="gen-det"><summary>Game Settings</summary><div>
-   <h4>Dust values</h4><p class="hint">Change how much dust each rarity/type gives when converted.</p>
-   <div class="grid" id="dust-grid"></div>
-   <h4>Special type multipliers (applied on top of rarity)</h4><div class="grid" id="mult-grid"></div>
-   <h4>Content mode</h4>
-   <label class="opt"><input type="checkbox" id="f2p"> Free-to-Play Mode (packs only offer F2P content)</label>
-   <p class="hint">When enabled, packs will exclude members-only quests, skills, bosses, etc.</p>
-   <h4>Pack pricing</h4>
-   <label class="opt">Base Pack Cost (gp): <input type="number" data-k="packBaseCost" data-d="1000" min="100" step="100" style="width:120px"></label>
-   <p class="hint">Starting cost per regular pack. Doubles every 10% overall completion.</p>
-   <div class="row2"><button id="save-settings">Save Changes</button></div>
-  </div></details>
-  <details id="cards-det"><summary id="cards-anchor">Card Data</summary><div>
-  <p class="hint">The app contains no card data: these boxes are the game's card lists. Paste your lines in, edit by hand, or add lines made with the Card Creator (Settings), then press <b>Apply &amp; reload</b>. Your progress is kept.</p>
-  <div id="load-errs"></div>
-  <div id="ref-list"></div>
-  <div class="row2"><button id="apply-data">Apply &amp; reload</button><span class="hint">Nothing changes until you apply.</span></div>
-  </div></details>
- </div>
-
  <section class="box stats">
   <div id="packs" class="comp">Packs Opened: 0</div>
   <div class="comp">Completion: <span id="comp-text">0 / 0 (0%)</span><div class="bar"><i id="comp-bar"></i></div></div>
@@ -185,21 +198,22 @@ header.top label.qty{display:none}
   </div>
  </section>
 
+ <div class="cols">
+ <div class="colL">
+ <section class="box sec">
+  <div class="row seg tabs" data-key="showView"><button data-v="quests">Quests</button><button data-v="diaries">Diaries</button><button data-v="combat">Combat</button><button data-v="bosses">Bosses</button><button data-v="minigames">Minigames</button><button data-v="clues">Clues</button></div>
+  <div class="prog"><div class="bar"><i id="p-bmc"></i></div><span id="t-bmc"></span></div>
+  <div class="cards" id="c-bmc"></div>
+ </section>
+ </div>
+ <div class="colR">
  <section class="box sec">
   <h2>Skills</h2>
   <div class="prog"><div class="bar"><i id="p-sk"></i></div><span id="t-sk"></span></div>
   <div class="cards" id="c-sk"></div>
  </section>
- <section class="box sec">
-  <div class="row seg tabs" data-key="showQDView"><button data-v="quests">Quests</button><button data-v="diaries">Achievement Diaries</button><button data-v="combat">Combat Achievements</button></div>
-  <div class="prog"><div class="bar"><i id="p-qd"></i></div><span id="t-qd"></span></div>
-  <div class="cards" id="c-qd"></div>
- </section>
- <section class="box sec">
-  <div class="row seg tabs" data-key="showView"><button data-v="bosses">Bosses</button><button data-v="minigames">Minigames</button><button data-v="clues">Clues</button></div>
-  <div class="prog"><div class="bar"><i id="p-bmc"></i></div><span id="t-bmc"></span></div>
-  <div class="cards" id="c-bmc"></div>
- </section>
+ </div>
+ </div>
 
 </main>
 
@@ -215,9 +229,9 @@ header.top label.qty{display:none}
 
 <div class="modal" id="pack-modal"><div class="dlg wide"><div class="mh"><h2 id="pack-title"></h2><button data-close aria-label="Close pack">✕ Close</button></div><div class="mb"><div class="cards" id="pack-cards"></div></div></div></div>
 
-<div class="modal" id="settings-modal" role="dialog" aria-modal="true" aria-label="Settings"><div class="dlg">
+<div class="modal" id="settings-modal" role="dialog" aria-modal="true" aria-label="Settings"><div class="dlg wide">
  <div class="mh"><h2>Settings</h2><button data-close>✕ Close</button></div>
- <div class="stabs"><button data-tab="readme" class="on">Readme</button><button data-tab="creator">Card Creator</button><button data-tab="data">Data</button><button id="updBtn">Look for updates</button><span id="updMsg" class="hint"></span></div>
+ <div class="stabs"><button data-tab="readme" class="on">Readme</button><button data-tab="creator">Card Creator</button><button data-tab="icons">Icons</button><button data-tab="gamesettings">Game Settings</button><button data-tab="carddata">Card Data</button><button data-tab="data">Data</button><button id="updBtn">Look for updates</button><span id="updMsg" class="hint"></span></div>
  <div class="mb">
   <div class="spane" data-pane="readme">
    <h2 style="margin:.6rem 0 0">BinderScape – Features &amp; How to Play</h2>
@@ -312,6 +326,9 @@ header.top label.qty{display:none}
 <li>Paste your own lines to add cards, or replace a whole section. Bad lines are skipped (the box tells you which) — they never break the game. Press <strong>Apply &amp; reload</strong> to use your changes. <strong>Clear</strong> empties a section.</li>
 <li>Use <strong>Settings → Card Creator</strong> to fill in a form and get a correctly formatted line, then copy it or add it straight to the section.</li>
 <li>Your collection is stored by card name: if you rename or remove a card, it simply stops showing until the name exists again.</li></ul></section>
+<section><h3>Card icons</h3><ul>
+<li><strong>Settings → Icons → Fetch icons</strong> downloads the category icons and every individual skill's icon from the OSRS Wiki (in one batched lookup) and shows them on the cards. They are stored in your browser only, and <strong>Remove icons</strong> clears them.</li>
+<li>If a type says its source wasn't found, edit that line in the Icon sources box (a wiki file name or a direct image URL) and fetch again.</li></ul></section>
 <section><h3>Install &amp; Updates</h3><ul>
 <li>When opened from its web address, BinderScape can be installed as an app (browser menu → Install / Add to Home Screen) and then works offline from its saved copy.</li>
 <li>Nothing checks for updates in the background. Press <strong>Look for updates</strong> in Settings (next to the Data tab): it turns green and says <strong>Update now</strong> when a newer version exists. Your save, settings and card data are kept.</li>
@@ -326,6 +343,36 @@ header.top label.qty{display:none}
    <textarea id="cc-out" rows="3" readonly spellcheck="false"></textarea>
    <p class="hint" id="cc-msg"></p>
    <div class="row2"><button id="cc-copy">Copy</button><button id="cc-add">Add to section</button><button id="cc-apply">Add to section &amp; reload</button></div>
+  </div>
+  <div class="spane" data-pane="icons" hidden>
+   <section><h3>Card Icons</h3>
+   <p class="hint">Fetch the category icons (Skills, Quests, Diaries…) and the icon for each individual skill (Attack, Magic…) from the OSRS Wiki and show them on the cards. They are saved in this browser only, nothing is added to the app files, and they keep working offline once fetched.</p>
+   <label class="fld">Icon sources<textarea id="icon-src" rows="8" wrap="off" spellcheck="false"></textarea><small class="hint">One per line: <code>type | File name or image URL ; fallback ; fallback</code>. The <code>skill</code> line is a template for the individual skills, where <code>{skill}</code> becomes each skill's name. The first one that exists is used. Edit a line if the status below says a source wasn't found.</small></label>
+   <div class="row2"><button id="icon-fetch">Fetch icons</button><button id="icon-clear">Remove icons</button><button id="icon-reset">Reset sources</button></div>
+   <div id="icon-status" class="hint"></div>
+   <div id="icon-prev" class="row2"></div></section>
+  </div>
+  <div class="spane" data-pane="gamesettings" hidden>
+  <section id="gen-det"><h3>Game Settings</h3><div>
+   <h4>Dust values</h4><p class="hint">Change how much dust each rarity/type gives when converted.</p>
+   <div class="grid" id="dust-grid"></div>
+   <h4>Special type multipliers (applied on top of rarity)</h4><div class="grid" id="mult-grid"></div>
+   <h4>Content mode</h4>
+   <label class="opt"><input type="checkbox" id="f2p"> Free-to-Play Mode (packs only offer F2P content)</label>
+   <p class="hint">When enabled, packs will exclude members-only quests, skills, bosses, etc.</p>
+   <h4>Pack pricing</h4>
+   <label class="opt">Base Pack Cost (gp): <input type="number" data-k="packBaseCost" data-d="1000" min="100" step="100" style="width:120px"></label>
+   <p class="hint">Starting cost per regular pack. Doubles every 10% overall completion.</p>
+   <div class="row2"><button id="save-settings">Save Changes</button></div>
+  </div></section>
+  </div>
+  <div class="spane" data-pane="carddata" hidden>
+  <section id="cards-det"><h3 id="cards-anchor">Card Data</h3><div>
+  <p class="hint">The app contains no card data: these boxes are the game's card lists. Paste your lines in, edit by hand, or add lines made with the Card Creator (Settings), then press <b>Apply &amp; reload</b>. Your progress is kept.</p>
+  <div id="load-errs"></div>
+  <div id="ref-list"></div>
+  <div class="row2"><button id="apply-data">Apply &amp; reload</button><span class="hint">Nothing changes until you apply.</span></div>
+  </div></section>
   </div>
   <div class="spane" data-pane="data" hidden>
    <section><h3>Save Management</h3>
@@ -369,7 +416,7 @@ const NONE={skills:'No prior skill tier required.',quests:'No requirements.',dia
 const K={state:'osrsCollectionFinal',undo:'binderScapeUndo',log:'binderScapeLog'},DK='binderScapeCardData';   // DK (card data) is deliberately not in K, so Reset Save keeps your card lists
 const ls=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}};
 /* The app contains NO card data. The reference sections are whatever was pasted into Settings → Card Data (stored in this browser). */
-const SRC={},OVR=ls(DK,{});
+const SRC={},OVR=ls(DK,{}),IK='binderScapeIcons',ICONS=ls(IK,{});   // icons are fetched by the user into this browser; none ship in the app
 for(const c of['skills','quests','diaries','combat','bosses','minigames','clues'])SRC[c]=OVR&&typeof OVR[c]==='string'?OVR[c]:''
 /* ── Card data: parsed at runtime from the reference sections (see Settings → Card Data) ── */
 const CATS=['skills','quests','diaries','combat','bosses','minigames','clues'];
@@ -416,7 +463,7 @@ const TOTAL=C.size;
 /* ── State (save-compatible with the original) ── */
 function norm(s){
  for(const k of['quests','completedQuests','diaries','completedDiaries','combatAchievements','completedCombatAchievements','bossMinigame','clues'])s[k]||=[];
- if(!s.skills?.length)s.skills=ST.slice();s.dust||=0;s.packsOpened||=0;s.showView||='bosses';s.showQDView||='quests';s.f2pMode??=false;
+ if(!s.skills?.length)s.skills=ST.slice();s.dust||=0;s.packsOpened||=0;s.showView||='quests';if(!['quests','diaries','combat','bosses','minigames','clues'].includes(s.showView))s.showView='quests';s.f2pMode??=false;
  const now=Date.now();
  s.clues=s.clues.map((c,i)=>typeof c==='string'?{id:i+1,name:c,acquiredAt:now}:{id:c.id,name:c.name,acquiredAt:c.acquiredAt||now});
  s.bossMinigame=s.bossMinigame.map(e=>typeof e==='string'?{name:e,acquiredAt:now}:{name:e.name,acquiredAt:e.acquiredAt||now});
@@ -428,6 +475,9 @@ if(!Array.isArray(undo))undo=[];if(!Array.isArray(log))log=[];
 
 /* Derived lookups, rebuilt after every state change */
 let own,done,lvl,nextId;
+/* Skills tab order from OSRS, read left to right in rows of three; unknown/custom skills go last */
+const SKO=['Attack','Hitpoints','Mining','Strength','Agility','Smithing','Defence','Herblore','Fishing','Ranged','Thieving','Cooking','Prayer','Crafting','Firemaking','Magic','Fletching','Woodcutting','Runecraft','Slayer','Farming','Construction','Hunter','Sailing'];
+const skIdx=n=>{const i=SKO.findIndex(x=>x.toLowerCase()===skillOf(n).toLowerCase());return i<0?99:i};
 const tmax=n=>parseInt(n.split('-')[1],10),skillOf=n=>n.slice(n.indexOf(' ')+1),cur=s=>lvl.get(s)||0;
 function sync(){
  const bm=new Set(S.bossMinigame.map(e=>e.name));
@@ -495,7 +545,7 @@ function stats(){
  const n={Common:0,Uncommon:0,Rare:0,Mythic:0};
  for(const x of[...S.quests,...S.diaries,...S.combatAchievements,...own.bosses,...S.clues.map(c=>c.name),...S.skills]){const r=R.get(x);if(r in n)n[r]++}
  $$('#chips [data-r]').forEach(e=>e.textContent=`${e.dataset.r}: ${n[e.dataset.r]}`);
- for(const[id,cat]of[['sk','skills'],['qd',S.showQDView],['bmc',S.showView]]){
+ for(const[id,cat]of[['sk','skills'],['bmc',S.showView]]){
   const{c,t}=comp(cat),q=t?Math.round(c/t*100):0;$('t-'+id).textContent=`${c} / ${t} (${q}%)`;bar('p-'+id,q)}}
 
 /* ── Pack generation (weighted roulette; focus rarity memoised per pack) ── */
@@ -533,12 +583,12 @@ function genPack(){
  return out}
 
 /* ── Rendering (innerHTML strings, active views only, content-visibility in CSS) ── */
-const card=(n,o={})=>`<div class="card ${R.get(n)} ${o.cls||''}" data-n="${esc(n)}"${o.i!=null?` data-i="${o.i}"`:''}${o.id!=null?` data-id="${o.id}"`:''}><i class="pip"></i><div><b class="rar">${R.get(n)}</b><span class="typ">${TYPE[C.get(n)]}</span><div class="nm">${esc(n)}</div></div><div>${o.t?`<div class="timer" data-t="${o.t}">Auto-discards in …</div>`:''}${o.btn?'<button class="complete-btn">Complete</button>':''}</div></div>`;
+const card=(n,o={})=>C.get(n)==='skills'?`<div class="card skillcard ${R.get(n)} ${o.cls||''}" data-n="${esc(n)}"${o.i!=null?` data-i="${o.i}"`:''}${o.id!=null?` data-id="${o.id}"`:''}><i class="pip"></i><div><b class="rar">${R.get(n)}</b><span class="typ">${TYPE.skills}</span></div><div class="sico">${ico(n,'sicon')}</div><div class="sbot"><span class="sname">${esc(skillOf(n))}</span><b class="snum">${esc(n.split(' ')[0])}</b></div></div>`:`<div class="card ${R.get(n)} ${o.cls||''}" data-n="${esc(n)}"${o.i!=null?` data-i="${o.i}"`:''}${o.id!=null?` data-id="${o.id}"`:''}><i class="pip"></i><div><b class="rar">${R.get(n)}</b><span class="typ">${TYPE[C.get(n)]}</span>${ico(n)}<div class="nm">${esc(n)}</div></div><div>${o.t?`<div class="timer" data-t="${o.t}">Auto-discards in …</div>`:''}${o.btn?'<button class="complete-btn">Complete</button>':''}</div></div>`;
 const tierSort=o=>(a,b)=>o.indexOf(a.split(' ')[0])-o.indexOf(b.split(' ')[0]);
 function cardsHtml(cat){
  let l;
  switch(cat){
-  case'skills':l=SK.map(s=>{let b;for(const t of TM){const n=`1-${t} ${s}`;if(cur(s)>=t&&match(n))b=n}return b}).filter(Boolean).sort((a,b)=>a.localeCompare(b));return l.map(n=>card(n)).join('');
+  case'skills':l=SK.map(s=>{let b;for(const t of TM){const n=`1-${t} ${s}`;if(cur(s)>=t&&match(n))b=n}return b}).filter(Boolean).sort((a,b)=>skIdx(a)-skIdx(b)||a.localeCompare(b));return l.map(n=>card(n)).join('');
   case'quests':case'diaries':case'combat':{
    l=S[OWN[cat]].filter(match);
    cat==='quests'?l.sort():cat==='diaries'?l.sort((a,b)=>tierSort(DT)(a,b)||a.localeCompare(b)):l.sort(tierSort(CT));
@@ -546,7 +596,7 @@ function cardsHtml(cat){
   case'bosses':case'minigames':return S.bossMinigame.filter(e=>C.get(e.name)===cat&&match(e.name)).map(e=>card(e.name,{cls:'timed',t:e.acquiredAt,btn:1})).join('');
   case'clues':return S.clues.filter(x=>match(x.name)).map(x=>card(x.name,{cls:'timed',t:x.acquiredAt,btn:1,id:x.id})).join('')}}
 function render(){
- $('c-sk').innerHTML=cardsHtml('skills');$('c-qd').innerHTML=cardsHtml(S.showQDView);$('c-bmc').innerHTML=cardsHtml(S.showView);
+ $('c-sk').innerHTML=cardsHtml('skills');$('c-bmc').innerHTML=cardsHtml(S.showView);
  $$('.tabs button').forEach(b=>b.classList.toggle('on',S[b.parentNode.dataset.key]===b.dataset.v));
  $$('#filters button').forEach(b=>b.classList.toggle('on',b.dataset.f===flt));
  stats();updTimers()}
@@ -701,6 +751,86 @@ function ccAdd(){const c=$('cc-type').value,ta=$('ta-'+c);ta.value=ta.value.repl
 $('cc-add').onclick=()=>{ccAdd();$('cc-msg').textContent='Added to the section. Press "Apply & reload" under Card Data on the main page when you are done adding cards.'};
 $('cc-apply').onclick=()=>{ccAdd();if(storeData())location.reload()};
 
+/* ── Card icons: fetched on demand from the OSRS Wiki into this browser (nothing ships in the app files) ── */
+const ICON_DEF=`skills | Stats icon.png; Skills icon.png
+quests | Quest point icon.png; Quests icon.png
+diaries | Achievement Diaries icon.png; Achievement Diary icon.png
+combat | Combat Achievements icon.png; Combat Achievements.png; Combat icon.png
+bosses | Boss icon.png; Slayer icon.png
+minigames | Minigame icon.png; Minigames icon.png
+clues | Clue scroll (medium).png; Clue scroll icon.png
+skill | {skill} icon.png`;   // 'skill' = one icon per individual skill; {skill} is replaced with each skill name
+const ISK='binderScapeIconSrc',WIKI='https://oldschool.runescape.wiki';
+function ico(n,cls='ticon'){const c=C.get(n),i=(c==='skills'&&ICONS['sk:'+skillOf(n)])||ICONS[c];return i&&(i.d||i.u)?`<img class="${cls}" alt="" src="${esc(i.d||i.u)}" onerror="this.style.display='none'">`:''}
+const isUrl=s=>/^https?:\/\//i.test(s),fileTitle=s=>'File:'+s.replace(/^(file|image):/i,'').trim().replace(/_/g,' ');
+function parseSrc(t){const o={};for(const l of t.split(/\r?\n/)){const m=/^\s*(\w+)\s*\|\s*(.+)$/.exec(l),k=m&&m[1].toLowerCase();if(k&&(k==='skill'||CATS.includes(k)))o[k]=m[2].split(';').map(x=>x.trim()).filter(Boolean)}return o}
+async function wikiUrls(titles){   // File names -> direct image URLs, through the wiki's CORS-enabled API
+ const out=new Map();
+ for(let i=0;i<titles.length;i+=40){
+  const ch=titles.slice(i,i+40),res=await fetch(`${WIKI}/api.php?action=query&format=json&origin=*&redirects=1&prop=imageinfo&iiprop=url&titles=${encodeURIComponent(ch.join('|'))}`);
+  if(!res.ok)throw new Error('HTTP '+res.status);
+  const q=(await res.json()).query||{},map={},by=new Map(Object.values(q.pages||{}).map(p=>[p.title,p.imageinfo?.[0]?.url]));
+  for(const x of[...(q.normalized||[]),...(q.redirects||[])])map[x.from]=x.to;
+  for(const t of ch){let k=t;for(let n=0;n<3&&map[k];n++)k=map[k];if(by.get(k))out.set(t,by.get(k))}}
+ return out}
+async function toData(url){const r=await fetch(url);if(!r.ok)throw 0;const b=await r.blob();if(!/^image\//.test(b.type)||b.size>150e3)throw 0;
+ return new Promise((ok,no)=>{const f=new FileReader();f.onload=()=>ok(f.result);f.onerror=no;f.readAsDataURL(b)})}
+/* Our own scaling: fit each icon into a square box. Small pixel-art icons are enlarged by a whole-number factor with no smoothing (stays crisp); big ones are shrunk smoothly. */
+function scaleIcon(data,box){return new Promise(ok=>{const im=new Image();
+ im.onload=()=>{try{const w=im.naturalWidth,h=im.naturalHeight;if(!w||!h)return ok(data);
+  const f=box/Math.max(w,h),up=f>=1,k=up?Math.floor(f):f,cw=Math.max(1,Math.round(w*k)),ch=Math.max(1,Math.round(h*k)),cv=document.createElement('canvas');
+  cv.width=cw;cv.height=ch;const x=cv.getContext('2d');x.imageSmoothingEnabled=!up;x.imageSmoothingQuality='high';x.drawImage(im,0,0,cw,ch);ok(cv.toDataURL('image/png'))}catch{ok(data)}};
+ im.onerror=()=>ok(data);im.src=data})}
+function iconPreview(){const ks=[...CATS.filter(c=>ICONS[c]).map(c=>[c,LBL[c]]),...SK.filter(x=>ICONS['sk:'+x]).map(x=>['sk:'+x,x])];
+ $('icon-prev').innerHTML=ks.map(([k,l])=>`<span class="ip"><img class="ticon" alt="" src="${esc(ICONS[k].d||ICONS[k].u)}"><small>${esc(l)}</small></span>`).join('')}
+function saveIcons(){try{localStorage.setItem(IK,JSON.stringify(ICONS));return true}catch{return false}}
+$('icon-src').value=localStorage.getItem(ISK)||ICON_DEF;iconPreview();
+const SKWIKI={runecrafting:'Runecraft',defense:'Defence',range:'Ranged',hitpoint:'Hitpoints'};   // names the wiki uses for its icon files, tried when the card's own name isn't found
+$('icon-fetch').onclick=async()=>{
+ const btn=$('icon-fetch'),st=$('icon-status');localStorage.setItem(ISK,$('icon-src').value);
+ const src=parseSrc($('icon-src').value),tpl=src.skill||['{skill} icon.png'];delete src.skill;
+ // one job per category icon, plus one per individual skill (all looked up and downloaded together)
+ const jobs=[...Object.keys(src).map(t=>({key:t,label:LBL[t],cands:src[t]})),
+  ...SK.map(x=>({key:'sk:'+x,label:x,cands:[x,SKWIKI[x.toLowerCase()]].filter(Boolean).flatMap(nm=>tpl.map(u=>u.replace(/\{skill\}/gi,nm)))}))];
+ if(!jobs.length){st.textContent='No valid lines found. Use: type | File name or image URL';return}
+ btn.disabled=true;st.textContent=`Looking up ${jobs.length} icons…`;
+ try{
+  // 1) ONE batched lookup (wikiUrls sends up to 40 file names per API request) for every category + skill file name
+  const titles=[...new Set(jobs.flatMap(j=>j.cands.filter(c=>!isUrl(c)).map(fileTitle)))],urls=titles.length?await wikiUrls(titles):new Map();
+  // 2) download every found image in parallel
+  let done=0;
+  const res=await Promise.all(jobs.map(async j=>{
+   let url=null,from='';for(const c of j.cands){const u=isUrl(c)?c:urls.get(fileTitle(c));if(u){url=u;from=c;break}}
+   if(!url)return{j,ok:false};
+   let rec,online=false;
+   try{rec={d:await scaleIcon(await toData(url),j.key.startsWith('sk:')?96:64),u:url}}catch{rec={u:url};online=true}
+   st.textContent=`Downloading icons… ${++done} of ${jobs.length}`;
+   return{j,ok:true,rec,from,online}}));
+  const rows=[];let got=0,miss=[];
+  for(const r of res){
+   if(!r.ok){miss.push(r.j);continue}
+   ICONS[r.j.key]=r.rec;got++;
+   if(r.online)rows.push(`✓ ${r.j.label}: ${r.from} (online only — the browser wouldn't let me keep a copy)`)}
+  const cats=res.filter(r=>!r.ok&&!r.j.key.startsWith('sk:')).map(r=>`✗ ${r.j.label}: none of these sources were found — edit the line and try again`),
+   sk=miss.filter(j=>j.key.startsWith('sk:')).map(j=>j.label);
+  if(sk.length)cats.push(`✗ Skill icons not found: ${sk.join(', ')} — edit the "skill" line and try again`);
+  const saved=saveIcons();render();iconPreview();
+  st.innerHTML=`<b>${got} of ${jobs.length} icons fetched.</b>${saved?'':' <span class="bad">Couldn’t save them (browser storage is full), so they will disappear on reload.</span>'}<br>`+[...cats,...rows].map(esc).join('<br>');
+ }catch{st.textContent='Couldn’t reach the OSRS Wiki. Check your connection and try again.'}
+ btn.disabled=false};
+$('icon-clear').onclick=()=>{Object.keys(ICONS).forEach(k=>delete ICONS[k]);localStorage.removeItem(IK);render();iconPreview();$('icon-status').textContent='Icons removed.'};
+$('icon-reset').onclick=()=>{$('icon-src').value=ICON_DEF;localStorage.removeItem(ISK);$('icon-status').textContent='Sources reset to the defaults.'};
+
+/* Card heights are measured so whole rows fill each box: 4 skill rows on the right, 3 rows of the other cards on the left (a part-row never peeks in) */
+(function(){
+ const fitBox=(el,rows,v,min,max)=>{if(!el)return;
+  const run=()=>{if(!matchMedia('(min-width:901px)').matches){el.style.removeProperty(v);return}
+   const cs=getComputedStyle(el),inner=el.clientHeight-parseFloat(cs.paddingTop)-parseFloat(cs.paddingBottom),gap=parseFloat(cs.rowGap)||10,h=Math.floor((inner-(rows-1)*gap)/rows);
+   if(h>40)el.style.setProperty(v,Math.min(max,Math.max(min,h))+'px')};
+  new ResizeObserver(run).observe(el);addEventListener('resize',run);run()};
+ fitBox($('c-sk'),4,'--sh',90,400);
+ fitBox($('c-bmc'),3,'--bh',170,400)})();
+
 /* ── PWA & updates ──
    The installed app runs from its offline copy and never looks for updates by itself: only the Settings button does.
    A normal browser tab checks once when it opens. Bump <meta name="bs-build"> on every release. */
@@ -744,7 +874,7 @@ if('serviceWorker'in navigator&&location.protocol.startsWith('http')){
  if(!isApp)checkUpdate(true)}
 
 $('empty').hidden=TOTAL>0;
-$('empty-btn').onclick=()=>{$('cards-det').open=true;$$('#ref-list details').forEach(d=>d.open=true);$('cards-anchor').scrollIntoView({behavior:'smooth'})};
+$('empty-btn').onclick=()=>{$('settings-modal').classList.add('open');showTab('carddata');$$('#ref-list details').forEach(d=>d.open=true)};
 /* ── Events (all delegated) ── */
 const modalFx={'settings-modal':()=>showTab('readme'),'buy-modal':fillBuy,'log-modal':renderLog,'activity-modal':renderActivity};
 document.addEventListener('click',e=>{
@@ -754,7 +884,7 @@ document.addEventListener('click',e=>{
  if(t.classList.contains('modal')&&t.id!=='pack-modal'){t.classList.remove('open');return}
  const st=t.closest('.stabs [data-tab]');if(st){showTab(st.dataset.tab);return}
  const tab=t.closest('.tabs button');
- if(tab){S[tab.parentNode.dataset.key]=tab.dataset.v;save();render();$(tab.parentNode.dataset.key==='showView'?'c-bmc':'c-qd').scrollTop=0;return}
+ if(tab){S[tab.parentNode.dataset.key]=tab.dataset.v;save();render();$('c-bmc').scrollTop=0;return}
  const f=t.closest('#filters button');if(f){flt=f.dataset.f;render();return}
  const cb=t.closest('.complete-btn');if(cb){const c=cb.closest('.card');complete(c.dataset.n,c.dataset.id);return}
  const by=t.closest('[data-buy]');if(by){$('buy-modal').classList.remove('open');startBatch(+by.dataset.buy);return}
