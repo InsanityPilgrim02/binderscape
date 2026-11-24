@@ -135,11 +135,10 @@ header.top label.qty{display:none}
 .setup-h{margin:22px 0 4px;font:800 16px/1 "Arial Narrow","Franklin Gothic Medium",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
 .setup h4{margin:14px 0 6px}
 .saves+.hint{margin-top:10px}
-.setup{margin:0}
-.setup details{margin-bottom:8px;background:var(--ink)}
-.setup .setup-h{margin-top:18px}
 .price{font-size:15px;margin:6px 0 0}.price small{display:block;color:var(--mute);font-size:12px;font-weight:400}
 .mb .comp{margin:6px 0}
+.setup{display:grid;gap:12px}
+.setup #cards-det details{margin-bottom:8px;background:var(--ink)}
 
 </style>
 </head>
@@ -154,8 +153,7 @@ header.top label.qty{display:none}
 </header>
 <div id="empty" class="box empty-note" hidden><h2>No card data loaded</h2><p class="hint">BinderScape doesn't include any cards. Paste your card lists into the Card Data sections at the bottom of the page to start playing.</p><button id="empty-btn">Go to Card Data</button></div>
 <main>
- <details class="setup" id="setup"><summary>Game Settings &amp; Card Data</summary><div>
-
+ <div class="setup" id="setup">
   <details id="gen-det"><summary>Game Settings</summary><div>
    <h4>Dust values</h4><p class="hint">Change how much dust each rarity/type gives when converted.</p>
    <div class="grid" id="dust-grid"></div>
@@ -168,12 +166,13 @@ header.top label.qty{display:none}
    <p class="hint">Starting cost per regular pack. Doubles every 10% overall completion.</p>
    <div class="row2"><button id="save-settings">Save Changes</button></div>
   </div></details>
-  <h2 class="setup-h" id="cards-anchor">Card Data</h2>
+  <details id="cards-det"><summary id="cards-anchor">Card Data</summary><div>
   <p class="hint">The app contains no card data: these boxes are the game's card lists. Paste your lines in, edit by hand, or add lines made with the Card Creator (Settings), then press <b>Apply &amp; reload</b>. Your progress is kept.</p>
   <div id="load-errs"></div>
   <div id="ref-list"></div>
   <div class="row2"><button id="apply-data">Apply &amp; reload</button><span class="hint">Nothing changes until you apply.</span></div>
   </div></details>
+ </div>
 
  <section class="box stats">
   <div id="packs" class="comp">Packs Opened: 0</div>
@@ -634,7 +633,7 @@ function renderActivity(){
 /* ── Settings ── */
 $('dust-grid').innerHTML=DUST.map(([k,l,d])=>`<label>${l}: <input type="number" data-k="${k}" data-d="${d}"></label>`).join('');
 $('mult-grid').innerHTML=MULT.map(([k,l])=>`<label>${l} Multiplier: <input type="number" step="0.1" data-k="${k}" data-d="3"></label>`).join('');
-function fillSettings(){$$('#setup [data-k]').forEach(i=>i.value=localStorage.getItem(i.dataset.k)||i.dataset.d);$('f2p').checked=S.f2pMode===true}
+function fillSettings(){$$('#gen-det [data-k]').forEach(i=>i.value=localStorage.getItem(i.dataset.k)||i.dataset.d);$('f2p').checked=S.f2pMode===true}
 fillSettings();
 
 /* ── Settings tabs ── */
@@ -742,7 +741,7 @@ if('serviceWorker'in navigator&&location.protocol.startsWith('http')){
  if(!isApp)checkUpdate(true)}
 
 $('empty').hidden=TOTAL>0;
-$('empty-btn').onclick=()=>{$('setup').open=true;$$('#ref-list details').forEach(d=>d.open=true);$('cards-anchor').scrollIntoView({behavior:'smooth'})};
+$('empty-btn').onclick=()=>{$('cards-det').open=true;$$('#ref-list details').forEach(d=>d.open=true);$('cards-anchor').scrollIntoView({behavior:'smooth'})};
 /* ── Events (all delegated) ── */
 const modalFx={'settings-modal':()=>showTab('readme'),'buy-modal':fillBuy,'log-modal':renderLog,'activity-modal':renderActivity};
 document.addEventListener('click',e=>{
@@ -760,7 +759,7 @@ document.addEventListener('click',e=>{
 document.addEventListener('keydown',e=>{if(e.key==='Escape')$$('.modal.open').pop()?.classList.remove('open')});
 
 $('save-settings').onclick=()=>{
- $$('#setup [data-k]').forEach(i=>localStorage.setItem(i.dataset.k,i.value));
+ $$('#gen-det [data-k]').forEach(i=>localStorage.setItem(i.dataset.k,i.value));
  S.f2pMode=$('f2p').checked;loadCfg();save();alert('Settings saved!');stats()};
 $('reset-save').onclick=()=>{if(confirm('Reset all progress? This cannot be undone.')){Object.values(K).forEach(k=>localStorage.removeItem(k));location.reload()}};
 $('export-save').onclick=()=>{
