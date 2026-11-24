@@ -6,7 +6,7 @@
 <title>BinderScape</title>
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#14161a">
-<meta name="bs-build" content="2026-11-23.1">   <!-- bump on every release: the update check compares this against the server copy -->
+<meta name="bs-build" content="2026-11-24.1">   <!-- bump on every release: the update check compares this against the server copy -->
 <link rel="icon" type="image/png" href="icon-192.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta name="apple-mobile-web-app-capable" content="yes">
@@ -708,10 +708,12 @@ const APP_CACHE='binderscape-app',INDEX_URL=new URL('index.html',document.baseUR
 const isApp=['standalone','fullscreen','minimal-ui'].some(m=>matchMedia(`(display-mode: ${m})`).matches)||navigator.standalone===true;
 let updState='idle';
 const updUi=(msg,btn)=>{$('updMsg').textContent=msg;if(btn){$('updBtn').textContent=btn;$('updBtn').classList.add('new')}};
-async function serverBuild(){
+async function serverCopy(){
  const res=await fetch(INDEX_URL+'?bs='+Date.now(),{cache:'no-store'});   // no-store requests skip the service worker and go to the network
  if(!res.ok)throw new Error('HTTP '+res.status);
- return /name="bs-build" content="([^"]+)"/.exec(await res.text())?.[1]||null}
+ return res.text()}
+async function cachedCopy(){try{const r=await(await caches.open(APP_CACHE)).match(INDEX_URL);return r?await r.text():null}catch{return null}}
+const buildOf=t=>/name="bs-build" content="([^"]+)"/.exec(t||'')?.[1]||null;
 async function downloadUpdate(){   // fetch everything first, then swap it in, so a failed download leaves the old version intact
  const cache=await caches.open(APP_CACHE),urls=new Set((await cache.keys()).map(r=>r.url));urls.add(INDEX_URL);
  const fresh=[];
@@ -724,9 +726,10 @@ async function checkUpdate(auto){
  if(!window.caches||!location.protocol.startsWith('http')){if(!auto)updUi('Updates can only be checked when the app is opened from its web address.');return}
  const btn=$('updBtn');btn.disabled=true;if(!auto)updUi('Checking…');
  try{
-  const theirs=await serverBuild(),mine=document.querySelector('meta[name="bs-build"]')?.content;
-  if(!theirs||!mine){if(!auto)updUi('Couldn’t tell which version the server has.')}
-  else if(theirs===mine){if(!auto)updUi('You’re up to date.')}
+  const theirs=await serverCopy(),mine=await cachedCopy();
+  if(!buildOf(theirs)){if(!auto)updUi('Couldn’t tell which version the server has.')}
+  // compare the real file contents (not just the version tag), so a forgotten version bump can never hide an update
+  else if(mine!==null?theirs===mine:buildOf(theirs)===document.querySelector('meta[name="bs-build"]')?.content){if(!auto)updUi('You’re up to date.')}
   else{updState='found';updUi('A new version is available. Your collection, settings and card data are kept.','Update now')}
  }catch{if(!auto)updUi('Couldn’t reach the server. Check your connection and try again.')}
  btn.disabled=false}
