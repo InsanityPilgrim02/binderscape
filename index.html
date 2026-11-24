@@ -18,7 +18,6 @@
 body{margin:0;background:var(--bench);color:var(--tx);font:14px/1.4 "Trebuchet MS","Segoe UI",system-ui,sans-serif}
 h1,h2,h3,h4{margin:0}
 h2{font-size:18px}h3{margin:1.4em 0 .6em;color:var(--amber)}h4{margin:.8em 0 .3em;font-size:13px}
-button:hover,.btn:hover{border-color:var(--amber)}
 :focus-visible{outline:2px solid var(--amber);outline-offset:2px}
 button:disabled,.disabled{opacity:.45;cursor:not-allowed}
 .danger{color:var(--bad)}.danger:hover{border-color:var(--bad)}
@@ -89,24 +88,20 @@ tr.got{background:color-mix(in srgb,var(--ok) 20%,transparent)}
 
 :root{--ok:#8fd694;--bad:#ff7b7b}
 [hidden]{display:none!important}
-button,.btn{font:inherit;font-weight:700;color:var(--tx);background:var(--ink);border:1px solid var(--line);border-radius:4px;padding:8px 14px;cursor:pointer;text-align:center;touch-action:manipulation;transition:border-color .15s,color .15s}
+button,.btn{border:0;border-radius:4px;padding:8px 14px;font-weight:700;cursor:pointer;background:var(--amber);color:#111;text-align:center;touch-action:manipulation}
+button:disabled{opacity:.4;cursor:default}
 input,select,textarea{font:inherit;color:var(--tx);background:var(--ink);border:1px solid var(--line);border-radius:4px;padding:8px 10px}
-.pri,.dlg .pri{background:var(--amber);border-color:var(--amber);color:#111}
-.pri:hover{color:#111;filter:brightness(1.1)}
-.btn{display:inline-block}
+.btn{display:inline-block;font:700 13.3333px Arial,sans-serif;line-height:normal}
 .bad{color:var(--bad)}
 header.top{position:sticky;top:0;z-index:20;background:var(--ink);border-bottom:2px solid var(--amber);display:flex;flex-wrap:wrap;gap:10px;align-items:center;padding:10px 16px}
 header.top h1{font:800 17px/1 "Arial Narrow","Franklin Gothic Medium",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
-header.top button,header.top .btn{background:var(--panel)}
-header.top .pri{background:var(--amber)}
 header.top label.qty{display:flex;gap:6px;align-items:center;color:var(--mute)}
-header.top input[type=number]{width:64px;padding:8px 6px;background:var(--panel)}
+header.top input[type=number]{width:64px;padding:8px 6px;background:var(--panel);color:#fff}
 .sp{flex:1}
 .modal{position:fixed;inset:0;z-index:110;display:none;align-items:center;justify-content:center;padding:12px;background:rgba(0,0,0,.6)}
 .modal.open{display:flex}
 .dlg{width:min(720px,100%);max-height:min(88vh,100%);display:flex;flex-direction:column;overflow:hidden;background:var(--panel);border:1px solid var(--line);border-radius:10px;box-shadow:0 12px 40px rgba(0,0,0,.6)}
 .dlg.wide{width:min(1100px,100%)}.dlg.log{width:min(1200px,100%)}.dlg.act{width:min(800px,100%)}
-.dlg button,.dlg .btn{background:var(--ink)}
 .mh{display:flex;align-items:center;justify-content:space-between;gap:10px;flex-wrap:wrap;padding:10px 14px;border-bottom:2px solid var(--amber)}
 .mh h2{font:800 16px/1 "Arial Narrow","Franklin Gothic Medium",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
 #pack-title{font-size:14px;line-height:1.3}
@@ -114,8 +109,9 @@ header.top input[type=number]{width:64px;padding:8px 6px;background:var(--panel)
 .mb section{margin:1.2rem 0}.mb section:first-child{margin-top:.4rem}.mb ul{padding-left:20px}
 .stabs{display:flex;gap:6px;padding:10px 14px 0;flex-wrap:wrap;align-items:center}
 .stabs button{padding:7px 14px}
-.stabs button.on{background:var(--amber);color:#111;border-color:var(--amber)}
-.stabs #updBtn{background:#d9453f;color:#fff;border-color:#d9453f}.stabs #updBtn.new{background:#2e9e5b;border-color:#2e9e5b}
+.stabs button,.seg button{background:var(--ink);color:#e8eaee;padding:7px 14px}
+.stabs button.on,.seg button.on{background:var(--amber);color:#111}
+.stabs #updBtn{background:#d9453f;color:#fff}.stabs #updBtn.new{background:#2e9e5b}
 .stabs .hint{margin:0}
 details{background:var(--panel);border:1px solid var(--line);border-radius:6px;margin-bottom:8px}
 summary{padding:9px 12px;font-weight:700;cursor:pointer}
@@ -128,37 +124,60 @@ code{background:var(--ink);padding:1px 5px;border-radius:3px;font-size:12px}
 .scroll{border:1px solid var(--line);border-radius:6px;background:var(--ink)}
 .foot{display:flex;justify-content:flex-end;gap:12px;margin-top:20px}
 @media(max-width:600px){main{padding:12px}header.top{padding:10px 12px}.mb{padding:6px 12px 12px}}
+.danger{background:#d9453f;color:#fff}
+.complete-btn{padding:5px 10px;background:var(--ok);color:#111}
+.empty-note{text-align:center}
+header.top label.qty{display:none}
+.buy-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin-top:8px}
+.buy-grid button{display:flex;flex-direction:column;align-items:center;gap:2px;padding:14px 10px}
+.buy-grid button b{font-size:15px}.buy-grid button span{font-weight:600}.buy-grid button small{font-weight:600;opacity:.75}
+.dgrid button{padding:10px}
+.setup-h{margin:22px 0 4px;font:800 16px/1 "Arial Narrow","Franklin Gothic Medium",Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--amber)}
+.setup h4{margin:14px 0 6px}
+.saves+.hint{margin-top:10px}
+.setup{margin:0}
+.setup details{margin-bottom:8px;background:var(--ink)}
+.setup .setup-h{margin-top:18px}
+.price{font-size:15px;margin:6px 0 0}.price small{display:block;color:var(--mute);font-size:12px;font-weight:400}
+.mb .comp{margin:6px 0}
 
 </style>
 </head>
 <body>
 <header class="top">
  <h1>BinderScape</h1>
- <label class="qty">Open <input id="qty" type="number" min="1" max="50" value="1"> Packs</label>
- <button id="open-packs" class="pri">Open Packs</button>
+ <button id="buy-btn" data-open="buy-modal">Buy packs!</button>
  <button data-open="log-modal">Collection Log</button>
  <button data-open="activity-modal">Activity Log</button>
- <button data-open="creator-modal">Card Creator</button>
- <button id="export-save">Export</button><label for="import-input" class="btn">Import</label><input type="file" id="import-input" accept=".json" hidden>
  <span class="sp"></span>
- <button data-open="help-modal">Help</button>
  <button data-open="settings-modal">Settings</button>
 </header>
+<div id="empty" class="box empty-note" hidden><h2>No card data loaded</h2><p class="hint">BinderScape doesn't include any cards. Paste your card lists into the Card Data sections at the bottom of the page to start playing.</p><button id="empty-btn">Go to Card Data</button></div>
 <main>
+ <details class="setup" id="setup"><summary>Game Settings &amp; Card Data</summary><div>
+
+  <details id="gen-det"><summary>Game Settings</summary><div>
+   <h4>Dust values</h4><p class="hint">Change how much dust each rarity/type gives when converted.</p>
+   <div class="grid" id="dust-grid"></div>
+   <h4>Special type multipliers (applied on top of rarity)</h4><div class="grid" id="mult-grid"></div>
+   <h4>Content mode</h4>
+   <label class="opt"><input type="checkbox" id="f2p"> Free-to-Play Mode (packs only offer F2P content)</label>
+   <p class="hint">When enabled, packs will exclude members-only quests, skills, bosses, etc.</p>
+   <h4>Pack pricing</h4>
+   <label class="opt">Base Pack Cost (gp): <input type="number" data-k="packBaseCost" data-d="1000" min="100" step="100" style="width:120px"></label>
+   <p class="hint">Starting cost per regular pack. Doubles every 10% overall completion.</p>
+   <div class="row2"><button id="save-settings">Save Changes</button></div>
+  </div></details>
+  <h2 class="setup-h" id="cards-anchor">Card Data</h2>
+  <p class="hint">The app contains no card data: these boxes are the game's card lists. Paste your lines in, edit by hand, or add lines made with the Card Creator (Settings), then press <b>Apply &amp; reload</b>. Your progress is kept.</p>
+  <div id="load-errs"></div>
+  <div id="ref-list"></div>
+  <div class="row2"><button id="apply-data">Apply &amp; reload</button><span class="hint">Nothing changes until you apply.</span></div>
+  </div></details>
+
  <section class="box stats">
-  <div class="price">Pack Cost: <b id="price">1,000 gp</b> each<small>(Doubles every 10% completion – based on overall progress)</small></div>
   <div id="packs" class="comp">Packs Opened: 0</div>
   <div class="comp">Completion: <span id="comp-text">0 / 0 (0%)</span><div class="bar"><i id="comp-bar"></i></div></div>
-  <div class="dust"><span>Dust: <b id="dust">0</b></span>
-   <div class="row">
-    <button data-dust="skills">Skills Dust Pack (10 Dust)</button>
-    <button data-dust="quests">Quests Dust Pack (10 Dust)</button>
-    <button data-dust="diaries">Achievement Diaries Dust Pack (10 Dust)</button>
-    <button data-dust="bosses">Bosses Dust Pack (10 Dust)</button>
-    <button data-dust="minigames">Minigames Dust Pack (10 Dust)</button>
-    <button data-dust="clues">Clues Dust Pack (10 Dust)</button>
-   </div>
-  </div>
   <div class="row" id="chips">
    <span class="chip Common" data-r="Common">Common: 0</span><span class="chip Uncommon" data-r="Uncommon">Uncommon: 0</span><span class="chip Rare" data-r="Rare">Rare: 0</span><span class="chip Mythic" data-r="Mythic">Mythic: 0</span>
   </div>
@@ -182,65 +201,36 @@ code{background:var(--ink);padding:1px 5px;border-radius:3px;font-size:12px}
   <div class="prog"><div class="bar"><i id="p-bmc"></i></div><span id="t-bmc"></span></div>
   <div class="cards" id="c-bmc"></div>
  </section>
+
 </main>
+
+<div class="modal" id="buy-modal" role="dialog" aria-modal="true" aria-label="Buy packs"><div class="dlg">
+ <div class="mh"><h2>Buy Packs</h2><button data-close>✕ Close</button></div>
+ <div class="mb">
+  <section><h3>Boosters</h3><p class="price">Pack Cost: <b id="price">1,000 gp</b> each<small>Doubles every 10% completion, based on overall progress. A batch stops when you reach a new 10% step.</small></p>
+   <div class="buy-grid"><button data-buy="1"><b>Booster</b><span>1 pack</span><small data-cost="1"></small></button><button data-buy="3"><b>Event Boosters</b><span>3 packs</span><small data-cost="3"></small></button><button data-buy="10"><b>Fat Pack Boosters</b><span>10 packs</span><small data-cost="10"></small></button><button data-buy="24"><b>Booster Box</b><span>24 packs</span><small data-cost="24"></small></button></div></section>
+  <section><h3>Dust Packs</h3><p class="hint">Each dust pack is a single booster of one category and costs 10 dust. Dust: <b id="dust">0</b></p>
+   <div class="buy-grid dgrid"><button data-dust="skills">Skills<small>10 dust</small></button><button data-dust="quests">Quests<small>10 dust</small></button><button data-dust="diaries">Achievement Diaries<small>10 dust</small></button><button data-dust="bosses">Bosses<small>10 dust</small></button><button data-dust="minigames">Minigames<small>10 dust</small></button><button data-dust="clues">Clue Scrolls<small>10 dust</small></button></div></section>
+ </div>
+</div></div>
 
 <div class="modal" id="pack-modal"><div class="dlg wide"><div class="mh"><h2 id="pack-title"></h2><button data-close aria-label="Close pack">✕ Close</button></div><div class="mb"><div class="cards" id="pack-cards"></div></div></div></div>
 
 <div class="modal" id="settings-modal" role="dialog" aria-modal="true" aria-label="Settings"><div class="dlg">
  <div class="mh"><h2>Settings</h2><button data-close>✕ Close</button></div>
- <div class="stabs"><button data-tab="general" class="on">General</button><button data-tab="cards">Card Data</button><button data-tab="data">Data</button><button id="updBtn">Look for updates</button><span id="updMsg" class="hint"></span></div>
+ <div class="stabs"><button data-tab="readme" class="on">Readme</button><button data-tab="creator">Card Creator</button><button data-tab="data">Data</button><button id="updBtn">Look for updates</button><span id="updMsg" class="hint"></span></div>
  <div class="mb">
-  <div class="spane" data-pane="general">
-   <section><h3>Customize Dust Values</h3><p class="hint">Change how much dust each rarity/type gives when converted.</p>
-    <h4>General Rarity Dust</h4><div class="grid" id="dust-grid"></div>
-    <h4>Special Type Multipliers (applied on top of rarity)</h4><div class="grid" id="mult-grid"></div></section>
-   <section><h3>Content Mode</h3>
-    <label class="opt"><input type="checkbox" id="f2p"> Free-to-Play Mode (packs only offer F2P content)</label>
-    <p class="hint">When enabled, packs will exclude members-only quests, skills, bosses, etc.</p></section>
-   <section><h3>Pack Pricing</h3>
-    <label class="opt">Base Pack Cost (gp): <input type="number" data-k="packBaseCost" data-d="1000" min="100" step="100" style="width:120px"></label>
-    <p class="hint">Starting cost per regular pack. Doubles every 10% overall completion.</p></section>
-   <div class="foot"><button id="save-settings" class="pri">Save Changes</button></div>
-  </div>
-  <div class="spane" data-pane="cards" hidden>
-   <p class="hint">These boxes are the game's card lists. Paste over them, edit by hand, or add lines made with the Card Creator, then press <b>Apply &amp; reload</b>. Your progress is kept.</p>
-   <div id="load-errs"></div>
-   <div id="ref-list"></div>
-   <div class="row2"><button id="apply-data" class="pri">Apply &amp; reload</button><span class="hint">Nothing changes until you apply.</span></div>
-  </div>
-  <div class="spane" data-pane="data" hidden>
-   <section><h3>Save Management</h3>
-    <div class="saves"><button id="reset-save" class="danger">Reset Save</button><button id="data-export">Export Save (JSON)</button><button id="data-import">Import Save (JSON)</button></div>
-    <p class="hint">Your collection, activity log, settings and card data are stored in this browser and survive app updates. Export a save file now and then as a backup.</p></section>
-  </div>
- </div>
-</div></div>
-
-<div class="modal" id="creator-modal" role="dialog" aria-modal="true" aria-label="Card Creator"><div class="dlg">
- <div class="mh"><h2>Card Creator</h2><button data-close>✕ Close</button></div>
- <div class="mb">
-  <p class="hint">Pick a card type and fill in the fields. The line below matches the format the reference sections expect.</p>
-  <label class="fld">Card type<select id="cc-type"></select></label>
-  <div id="cc-fields"></div>
-  <h4>Generated line(s)</h4>
-  <textarea id="cc-out" rows="3" readonly spellcheck="false"></textarea>
-  <p class="hint" id="cc-msg"></p>
-  <div class="row2"><button id="cc-copy" class="pri">Copy</button><button id="cc-add">Add to section</button><button id="cc-apply">Add to section &amp; reload</button></div>
- </div>
-</div></div>
-
-<div class="modal" id="help-modal" role="dialog" aria-modal="true"><div class="dlg">
- <div class="mh"><h2>Help / Features</h2><button data-close>✕ Close</button></div>
- <div class="mb">
+  <div class="spane" data-pane="readme">
+   <h2 style="margin:.6rem 0 0">BinderScape – Features &amp; How to Play</h2>
             <section>
                 <h3>Core Gameplay</h3>
                 <ul>
-                    <li>Open regular packs to collect cards across 7 main categories: Skills, Quests, Diaries, Combat Achievements, Bosses, Minigames, Clue Scrolls</li>
+                    <li>Buy and open packs (1, 3, 10 or 24 at a time) to collect cards across 7 main categories: Skills, Quests, Diaries, Combat Achievements, Bosses, Minigames, Clue Scrolls</li>
                     <li>Choose <strong>one card per pack</strong> to keep or dust duplicates/outdated tiers</li>
                     <li>Many cards have prerequisites — missing prereqs show the card as greyed-out/dashed and cannot be selected from packs</li>
                     <li>Quests require their listed prerequisite quests and skill levels (same restriction style as diaries/combat achievements)</li>
                     <li>Complete certain card types (Quests, Diaries, Combat Achievements, Bosses, Minigames, Clues) for extra dust</li>
-                    <li>There is a Pack Cost display at the top of the screen to show how much you should be paying per pack. By default this is set to 1000gp and doubles for every 10% of total Completion. This base figure can be changed in the Settings menu. If staying in F2P for some time I recommend setting this to 500gp due to the lack of gp generation available (and for similar reasons I also suggest increasing the base Dust amounts for Common and Uncommon and switching back when going P2P).</li>
+                    <li>The Pack Cost display on the main page shows how much each pack costs; the <strong>Buy packs!</strong> screen shows the total for each option. By default this is set to 1000gp and doubles for every 10% of total Completion. This base figure can be changed under Game Settings on the main page. If staying in F2P for some time I recommend setting this to 500gp due to the lack of gp generation available (and for similar reasons I also suggest increasing the base Dust amounts for Common and Uncommon and switching back when going P2P).</li>
                 </ul>
             </section>
             <section>
@@ -249,8 +239,8 @@ code{background:var(--ink);padding:1px 5px;border-radius:3px;font-size:12px}
                     <li>Duplicates / outdated skill tiers → convert to dust when selected</li>
                     <li>Bosses, Minigames, and Clues auto-discard when their timer runs out (3 hours by default, set per card in the card data) — complete them before then for dust</li>
                     <li>Manual dust conversion: click complete on cards in your collection</li>
-                    <li>Spend 10 dust on themed "Dust Packs" that guarantee 5 cards from one category</li>
-                    <li>Dust values can be customized in Settings (rarity base + multipliers for Diaries / Clues / Bosses etc.)</li>
+                    <li>Spend 10 dust on themed "Dust Packs" (in the Buy packs! screen) that guarantee 5 cards from one category</li>
+                    <li>Dust values can be customized under Game Settings on the main page (rarity base + multipliers for Diaries / Clues / Bosses etc.)</li>
                 </ul>
             </section>
             <section>
@@ -279,7 +269,7 @@ code{background:var(--ink);padding:1px 5px;border-radius:3px;font-size:12px}
             <section>
                 <h3>F2P Mode</h3>
                 <ul>
-                    <li>Toggle in Settings → limits packs to Free-to-Play content only</li>
+                    <li>Toggle Free-to-Play Mode under Game Settings → limits packs to Free-to-Play content only</li>
                     <li>Excludes most quests after Dragon Slayer I, all members skills above certain points, members bosses/minigames, higher clue tiers, all diaries, etc.</li>
                     <li>F2P is toggled on by default so the first 15 pack openings on new saves are always F2P. In addition only Commons and Uncommons are available to be picked. Rares and Mythics will not generate.</li>
                 </ul>
@@ -290,13 +280,13 @@ code{background:var(--ink);padding:1px 5px;border-radius:3px;font-size:12px}
                     <li>Hover over quests / combat achievements → see requirements & rewards tooltip</li>
                     <li>Global rarity filter (top of screen) hides/shows cards by rarity</li>
                     <li>Tab between views (Quests / Diaries / Combat, Bosses / Minigames / Clues)</li>
-                    <li>Export / Import save (JSON) — progress is saved automatically in browser</li>
+                    <li>Export / Import save (JSON) in Settings → Data — progress is saved automatically in browser</li>
                 </ul>
             </section>
             <section>
                 <h3>Collection Log</h3>
                 <ul>
-                    <li>Click the <strong>Collection Log</strong> button (top bar) to open a full searchable table of <strong>ALL possible cards (469 with the default card data)</strong> across Skills, Quests, Diaries, Combat Achievements, Bosses, Minigames, and Clues</li>
+                    <li>Click the <strong>Collection Log</strong> button (top bar) to open a full searchable table of <strong>ALL possible cards </strong> across Skills, Quests, Diaries, Combat Achievements, Bosses, Minigames, and Clues</li>
                     <li>Filters & Search: Real-time search by name, dropdowns for Rarity and Type, F2P-only checkbox</li>
                     <li>Collected Status: Your owned/completed cards are highlighted <strong>green</strong> for easy progress tracking</li>
                     <li>Notes Column: Quick rewards/unlocks for each card</li>
@@ -315,16 +305,35 @@ code{background:var(--ink);padding:1px 5px;border-radius:3px;font-size:12px}
                 </ul>
             </section>
  
+<section><h3>Buying packs</h3><ul>
+<li>Press <strong>Buy packs!</strong> in the top bar: <strong>Booster</strong> (1 pack), <strong>Event Boosters</strong> (3), <strong>Fat Pack Boosters</strong> (10) or a <strong>Booster Box</strong> (24).</li>
+<li>Under <strong>Dust Packs</strong> you can spend 10 dust on a single themed booster for Skills, Quests, Diaries, Bosses, Minigames or Clues.</li></ul></section>
 <section><h3>Card Data &amp; Card Creator</h3><ul>
-<li>Every card lives in a text reference section: <strong>Settings → Card Data</strong> has one box per card type (Skills, Quests, Diaries, Combat Achievements, Bosses, Minigames, Clue Scrolls). One card per line, columns separated by <code>|</code>.</li>
-<li>Paste your own lines to add cards, or replace a whole section. Bad lines are skipped (the box tells you which) — they never break the game. Press <strong>Apply &amp; reload</strong> to use your changes. <strong>Reset to default</strong> restores the original list.</li>
-<li>Use <strong>Card Creator</strong> (top bar) to fill in a form and get a correctly formatted line, then copy it or add it straight to the section.</li>
+<li>BinderScape ships with no card data. Every card lives in a text reference section: <strong>Card Data</strong> at the bottom of the main page has one collapsible box per card type (Skills, Quests, Diaries, Combat Achievements, Bosses, Minigames, Clue Scrolls). One card per line, columns separated by <code>|</code>.</li>
+<li>Paste your own lines to add cards, or replace a whole section. Bad lines are skipped (the box tells you which) — they never break the game. Press <strong>Apply &amp; reload</strong> to use your changes. <strong>Clear</strong> empties a section.</li>
+<li>Use <strong>Settings → Card Creator</strong> to fill in a form and get a correctly formatted line, then copy it or add it straight to the section.</li>
 <li>Your collection is stored by card name: if you rename or remove a card, it simply stops showing until the name exists again.</li></ul></section>
 <section><h3>Install &amp; Updates</h3><ul>
 <li>When opened from its web address, BinderScape can be installed as an app (browser menu → Install / Add to Home Screen) and then works offline from its saved copy.</li>
 <li>Nothing checks for updates in the background. Press <strong>Look for updates</strong> in Settings (next to the Data tab): it turns green and says <strong>Update now</strong> when a newer version exists. Your save, settings and card data are kept.</li>
 <li>In a normal browser tab the check also runs once when the page opens.</li></ul></section>
-</div>
+
+  </div>
+  <div class="spane" data-pane="creator" hidden>
+   <p class="hint">Pick a card type and fill in the fields. The line below matches the format the Card Data sections expect.</p>
+   <label class="fld">Card type<select id="cc-type"></select></label>
+   <div id="cc-fields"></div>
+   <h4>Generated line(s)</h4>
+   <textarea id="cc-out" rows="3" readonly spellcheck="false"></textarea>
+   <p class="hint" id="cc-msg"></p>
+   <div class="row2"><button id="cc-copy">Copy</button><button id="cc-add">Add to section</button><button id="cc-apply">Add to section &amp; reload</button></div>
+  </div>
+  <div class="spane" data-pane="data" hidden>
+   <section><h3>Save Management</h3>
+    <div class="saves"><button id="export-save">Export Save (JSON)</button><label for="import-input" class="btn">Import Save (JSON)</label><input type="file" id="import-input" accept=".json" hidden><button id="reset-save" class="danger">Reset Save</button></div>
+    <p class="hint">Your collection, activity log, settings and card data are stored in this browser and survive app updates. Export a save file now and then as a backup.</p></section>
+  </div>
+ </div>
 </div></div>
 
 <div class="modal" id="log-modal" role="dialog" aria-modal="true"><div class="dlg log">
@@ -342,530 +351,13 @@ code{background:var(--ink);padding:1px 5px;border-radius:3px;font-size:12px}
 </div></div>
 
 <div class="modal" id="activity-modal" role="dialog" aria-modal="true"><div class="dlg act">
- <div class="mh"><h2>Activity Log</h2><div class="row2" style="margin:0"><button id="undo-btn" class="pri">↩ Undo Last Action</button><button id="clear-log">Clear Log</button><button data-close>✕ Close</button></div></div>
+ <div class="mh"><h2>Activity Log</h2><div class="row2" style="margin:0"><button id="undo-btn">↩ Undo Last Action</button><button id="clear-log">Clear Log</button><button data-close>✕ Close</button></div></div>
  <div class="mb"><p class="hint">Most recent actions appear at the top. Undo restores the exact previous game state (limited to last 25 actions).</p>
  <div class="scroll"><ul id="activity-list"></ul></div></div>
 </div></div>
 
 <div id="tip"></div>
 
-<!-- ═══ CARD DATA REFERENCE SECTIONS ═══ default card lists, one block per card type. Edit here or (easier) in Settings → Card Data. -->
-<script type="text/plain" id="data-skills">
-# SKILLS — one card per line: Name | Rarity | F2P or P2P | Notes (reward / unlock text)
-# Names must be "1-<tier> <Skill>" with tier 10 (Starter), 25 (Common), 50 (Uncommon), 75 (Rare) or 99 (Mythic). Tier 10 must be Starter; the others must not.
-# Add a skill by adding all five tiers. Only the highest tier you own is kept; each tier needs the previous tier's level (10 → 25 → 50 → 75 → 99).
-# Lines starting with # and blank lines are ignored. Paste your own lines below to replace or extend.
-
-1-10 Attack | Starter | F2P | Steel (5) & black (10) weapons
-1-25 Attack | Common | F2P | Mithril weapons (20); Holy Grail needs 20
-1-50 Attack | Uncommon | F2P | Adamant (30) & rune (40) weapons
-1-75 Attack | Rare | P2P | Dragon weapons (60), abyssal whip (70), godswords (75)
-1-99 Attack | Mythic | P2P | Attack cape; 13,034,431 XP
-1-10 Hitpoints | Starter | F2P | Starting level (10 HP) – every level adds 1 max HP
-1-25 Hitpoints | Common | F2P | 25 max HP; XP comes with all melee/ranged/magic training
-1-50 Hitpoints | Uncommon | F2P | 50 max HP; handles most low/mid bosses
-1-75 Hitpoints | Rare | P2P | 75 max HP; most mid-game bosses viable
-1-99 Hitpoints | Mythic | P2P | Hitpoints cape; 13,034,431 XP
-1-10 Mining | Starter | F2P | Steel pickaxe (6); copper, tin & clay
-1-25 Mining | Common | F2P | Iron (15), silver (20) & mithril pickaxe (21)
-1-50 Mining | Uncommon | F2P | Coal (30), adamant pickaxe (31), gold (40), rune pickaxe (41)
-1-75 Mining | Rare | P2P | Mithril ore (55), dragon pickaxe (61), adamantite (70)
-1-99 Mining | Mythic | P2P | Mining cape; 13,034,431 XP
-1-10 Strength | Starter | F2P | Higher melee max hit; Waterfall Quest XP helps early
-1-25 Strength | Common | F2P | Higher max hits with mid-tier weapons
-1-50 Strength | Uncommon | F2P | Attack+Strength 130 opens the Warriors' Guild
-1-75 Strength | Rare | P2P | Bigger max hits with whip/godswords
-1-99 Strength | Mythic | P2P | Strength cape; 13,034,431 XP
-1-10 Agility | Starter | P2P | Gnome Stronghold course (1) & Draynor rooftops (10)
-1-25 Agility | Common | P2P | Al Kharid rooftops (20); The Grand Tree needs 25
-1-50 Agility | Uncommon | P2P | Varrock (30), Canifis (40) & Falador (50) rooftops
-1-75 Agility | Rare | P2P | Seers' Village (60) & Pollnivneach (70) rooftops
-1-99 Agility | Mythic | P2P | Agility cape; 13,034,431 XP
-1-10 Smithing | Starter | F2P | Bronze bars & blurite (8)
-1-25 Smithing | Common | F2P | Iron bars (15); Elemental Workshop I needs 20
-1-50 Smithing | Uncommon | F2P | Steel (30), cannonballs (35) & mithril (50)
-1-75 Smithing | Rare | P2P | Blast Furnace (60) & adamant (70)
-1-99 Smithing | Mythic | P2P | Smithing cape; 13,034,431 XP
-1-10 Defence | Starter | F2P | Steel (5) & black (10) armour
-1-25 Defence | Common | F2P | Mithril armour (20)
-1-50 Defence | Uncommon | F2P | Adamant (30) & rune (40) armour
-1-75 Defence | Rare | P2P | Dragon armour & defender (60), Barrows (70)
-1-99 Defence | Mythic | P2P | Defence cape; 13,034,431 XP
-1-10 Herblore | Starter | P2P | Attack potion (3) & antipoison (5)
-1-25 Herblore | Common | P2P | Strength potion (12) & restore stat (22)
-1-50 Herblore | Uncommon | P2P | Prayer potion (38) & super attack (45)
-1-75 Herblore | Rare | P2P | Super restore (63), antifire (69) & ranging potion (72)
-1-99 Herblore | Mythic | P2P | Herblore cape; 13,034,431 XP
-1-10 Fishing | Starter | F2P | Shrimp, sardines & herring; Fishing Contest (10)
-1-25 Fishing | Common | F2P | Trout (20) & pike (25) fly fishing
-1-50 Fishing | Uncommon | F2P | Salmon (30), lobster (40) & swordfish (50)
-1-75 Fishing | Rare | P2P | Monkfish (62), karambwan (65) & Fishing Guild (68)
-1-99 Fishing | Mythic | P2P | Fishing cape; 13,034,431 XP
-1-10 Ranged | Starter | F2P | Oak shortbow (5) & leather armour
-1-25 Ranged | Common | F2P | Willow bows (20) & studded leather
-1-50 Ranged | Uncommon | F2P | Maple/yew bows, green d'hide (40) & magic shortbow (50)
-1-75 Ranged | Rare | P2P | Rune/dragon crossbow (61/64), Karil's (70), blowpipe (75)
-1-99 Ranged | Mythic | P2P | Ranging cape; 13,034,431 XP
-1-10 Thieving | Starter | P2P | Man/woman, farmer (10) & cake stall
-1-25 Thieving | Common | P2P | Al Kharid warriors (25)
-1-50 Thieving | Uncommon | P2P | Master Farmers (38) for seeds; guards (40)
-1-75 Thieving | Rare | P2P | Ardougne knights (55) & Menaphite thugs (blackjack)
-1-99 Thieving | Mythic | P2P | Thieving cape; 13,034,431 XP
-1-10 Cooking | Starter | F2P | Shrimp, sardines & herring; Cook's Assistant XP
-1-25 Cooking | Common | F2P | Trout (15), salmon (25) & meat pies (20)
-1-50 Cooking | Uncommon | F2P | Tuna (30), lobster (40) & Cooking Guild (32)
-1-75 Cooking | Rare | P2P | Monkfish (62); Recipe for Disaster Awowogei needs 70
-1-99 Cooking | Mythic | P2P | Cooking cape – acts as cooking gauntlets (fewer burns); 13,034,431 XP
-1-10 Prayer | Starter | F2P | Thick Skin, Burst of Strength, Clarity of Thought, Rock Skin (10)
-1-25 Prayer | Common | F2P | Superhuman Strength (13), Rapid Heal (22) & Protect Item (25)
-1-50 Prayer | Uncommon | F2P | Protect from Magic (37), Missiles (40) & Melee (43)
-1-75 Prayer | Rare | P2P | Piety (70) & Rigour (74)
-1-99 Prayer | Mythic | P2P | Prayer cape; 13,034,431 XP
-1-10 Crafting | Starter | F2P | Gold rings/amulets (5–8) & leather gear
-1-25 Crafting | Common | F2P | Sapphire jewellery (20); The Golem needs 20
-1-50 Crafting | Uncommon | F2P | Crafting Guild (40) & diamond jewellery (43)
-1-75 Crafting | Rare | P2P | Dragonstone (55) & onyx (67) jewellery
-1-99 Crafting | Mythic | P2P | Crafting cape – teleports to the Crafting Guild; 13,034,431 XP
-1-10 Firemaking | Starter | F2P | Regular logs; Clock Tower gives 1,000 XP
-1-25 Firemaking | Common | F2P | Oak logs (15); Enlightened Journey needs 20
-1-50 Firemaking | Uncommon | F2P | Willow (30), maple (45) & Wintertodt (50)
-1-75 Firemaking | Rare | P2P | Yew (60) & magic logs (75)
-1-99 Firemaking | Mythic | P2P | Firemaking cape; 13,034,431 XP
-1-10 Magic | Starter | F2P | Wind/Water/Earth Strike (1/5/9) & Enchant (7)
-1-25 Magic | Common | F2P | Fire Strike (13), low alch (21) & Varrock Teleport (25)
-1-50 Magic | Uncommon | F2P | Superheat (43), Camelot Tele (45) & Iban's Blast (50)
-1-75 Magic | Rare | P2P | High Alchemy (55), Fire Blast (59) & Fire Wave (75)
-1-99 Magic | Mythic | P2P | Magic cape; 13,034,431 XP
-1-10 Fletching | Starter | P2P | Shortbows (5) & longbows (10)
-1-25 Fletching | Common | P2P | Oak bows (20–25)
-1-50 Fletching | Uncommon | P2P | Willow (35–40) & maple shortbow (50)
-1-75 Fletching | Rare | P2P | Yew bows (65–70)
-1-99 Fletching | Mythic | P2P | Fletching cape; 13,034,431 XP
-1-10 Woodcutting | Starter | F2P | Normal trees; steel axe (6)
-1-25 Woodcutting | Common | F2P | Oak (15) & mithril axe (21)
-1-50 Woodcutting | Uncommon | F2P | Willow (30), maple (45) & rune axe (41)
-1-75 Woodcutting | Rare | P2P | Yew (60), dragon axe (61) & magic trees (75)
-1-99 Woodcutting | Mythic | P2P | Woodcutting cape; 13,034,431 XP
-1-10 Runecrafting | Starter | F2P | Air, mind, water & earth runes
-1-25 Runecrafting | Common | F2P | Fire (14) & body (20) runes; medium pouch (25)
-1-50 Runecrafting | Uncommon | F2P | Cosmic (27), chaos (35) & nature (44); large pouch (50)
-1-75 Runecrafting | Rare | P2P | Law (54) & death (65) runes; giant pouch (75)
-1-99 Runecrafting | Mythic | P2P | Runecrafting cape; 13,034,431 XP
-1-10 Slayer | Starter | P2P | Turael tasks; banshees (15)
-1-25 Slayer | Common | P2P | Mazchna (20), rock slugs (20) & cockatrice (25)
-1-50 Slayer | Uncommon | P2P | Vannaka (40), basilisks (40) & bloodveld (50)
-1-75 Slayer | Rare | P2P | Aberrant spectres (60), kurask (70), gargoyles & Konar (75)
-1-99 Slayer | Mythic | P2P | Slayer cape; 13,034,431 XP
-1-10 Farming | Starter | P2P | Allotments & herb patch (Guam 9)
-1-25 Farming | Common | P2P | Oak trees (15) & sweetcorn (20)
-1-50 Farming | Uncommon | P2P | Farming Guild (45) & maple trees (45)
-1-75 Farming | Rare | P2P | Yew (60), snapdragon (62) & magic trees (75)
-1-99 Farming | Mythic | P2P | Farming cape – teleports to the Farming Guild; 13,034,431 XP
-1-10 Construction | Starter | P2P | Build a house (5); Tower of Life needs 10
-1-25 Construction | Common | P2P | Workshop (15), bedroom (20) & oak furniture
-1-50 Construction | Uncommon | P2P | Study (40), chapel (45) & portal chamber (50)
-1-75 Construction | Rare | P2P | Mahogany furniture (52) & superior garden (65)
-1-99 Construction | Mythic | P2P | Construction cape – teleports to your house; 13,034,431 XP
-1-10 Hunter | Starter | P2P | Bird snares & birdhouses (5)
-1-25 Hunter | Common | P2P | Deadfall/box traps; Eagles' Peak needs 27
-1-50 Hunter | Uncommon | P2P | Falconry (43) & At First Light (46)
-1-75 Hunter | Rare | P2P | Chinchompas (53), red (63) & black chinchompas (73)
-1-99 Hunter | Mythic | P2P | Hunter cape – can teleport to the Hunter Guild; 13,034,431 XP
-1-10 Sailing | Starter | P2P | Starter raft; sea charting & port tasks (2nd task slot at 7)
-1-25 Sailing | Common | P2P | Skiff (15), shipwreck salvaging & a 2nd boat slot
-1-50 Sailing | Uncommon | P2P | Sloop (50) & a 3rd boat slot
-1-75 Sailing | Rare | P2P | Late-game boat upgrades; 4th boat slot at 78
-1-99 Sailing | Mythic | P2P | Sailing cape – rename your boat any time; 13,034,431 XP
-</script>
-<script type="text/plain" id="data-quests">
-# QUESTS — one card per line: Name | Rarity | F2P or P2P | Notes | Prerequisite cards | Skill levels
-# Prerequisite cards are separated by ; and must be names of other cards (usually quests). Skill levels look like: Mining 10; Smithing 20
-# Rarity: Common, Uncommon, Rare or Mythic. The last two columns are optional.
-# Lines starting with # and blank lines are ignored. Paste your own lines below to replace or extend.
-
-The Corsair Curse | Common | F2P | 1,200 Firemaking XP; Corsair Cove access
-Cook's Assistant | Common | F2P | 300 Cooking XP; Lumbridge cook's range
-Demon Slayer | Common | F2P | Silverlight Demonbane Weapon
-The Restless Ghost | Common | F2P | Ghostspeak Amulet & Early Prayer XP
-Romeo & Juliet | Common | F2P | 5 quest points
-Sheep Shearer | Common | F2P | 150 Crafting XP
-Shield of Arrav | Common | F2P | Gang choice needed for Heroes
-Ernest the Chicken | Common | F2P | 300 coins & 4 quest points
-Imp Catcher | Common | F2P | Amulet of Accuracy
-Prince Ali Rescue | Common | F2P | 500 Crafting XP; free Al Kharid gate
-Doric's Quest | Common | F2P | 1,300 Mining XP & 180 coins
-Witch's Potion | Common | F2P | 325 Magic XP
-Goblin Diplomacy | Common | F2P | 200 Crafting XP & gold bar
-Pirate's Treasure | Common | F2P | 800 Cooking XP; gold ring & emerald
-Rune Mysteries | Common | F2P | Unlocks Runecrafting
-Misthalin Mystery | Common | F2P | 600 Crafting XP
-X Marks the Spot | Common | F2P | 300 XP lamp; unlocks stackable clue steps
-Below Ice Mountain | Common | F2P | Barromite Mace and Camdozaal Vault access
-Druidic Ritual | Common | P2P | Herblore unlock
-Fishing Contest | Common | P2P | Perfect jubbly |  | Fishing 10
-Monk's Friend | Common | P2P | 2,000 Prayer XP
-Clock Tower | Common | P2P | 1,000 Firemaking XP; Ardougne diary prerequisite
-Sheep Herder | Common | P2P | 3,100 coins & 4 quest points
-Plague City | Common | P2P | 2,425 Mining XP; unlocks West Ardougne
-Hazeel Cult | Common | P2P | Hazeel cloak
-Biohazard | Common | P2P | 1,250 Thieving XP; West Ardougne passage | Plague City
-Jungle Potion | Common | P2P | Herblore secondaries | Druidic Ritual | Herblore 3
-Dwarf Cannon | Common | P2P | 750 Crafting XP; Dwarf multicannon
-Murder Mystery | Common | P2P | 1,406 Crafting XP & 3 quest points
-Gertrude's Cat | Common | P2P | 1,525 Cooking XP; lets you raise kittens & cats
-Elemental Workshop I | Common | P2P | 5,000 Crafting XP & Elemental shield |  | Smithing 20; Mining 20; Crafting 20
-Priest in Peril | Common | P2P | 1,406 Prayer XP & Wolfbane dagger; Morytania access
-Death Plateau | Common | P2P | 3,000 Attack XP & climbing boots
-Recruitment Drive | Common | P2P | 1,000 Agility XP & Initiate armour | Black Knights' Fortress; Druidic Ritual
-Enlightened Journey | Common | P2P | Balloon transport; Farming, Firemaking & Crafting XP |  | Firemaking 20; Farming 30; Crafting 36
-Eagles' Peak | Common | P2P | Eagle transport |  | Hunter 27
-Tower of Life | Common | P2P | 1,000 Construction & 500 Crafting XP |  | Construction 10
-Client of Kourend | Common | P2P | Kourend Castle teleport & Kharedst's memoirs
-A Porcine of Interest | Common | P2P | 1,000 Slayer XP; unlocks Sourhog Slayer tasks
-Children of the Sun | Common | P2P | Access to Varlamore
-The Ribbiting Tale of a Lily Pad Labour Dispute | Common | P2P | 2,000 Woodcutting XP & a new hardwood farming patch | Children of the Sun | Woodcutting 15
-Ethically Acquired Antiquities | Common | P2P | 6,000 Thieving XP | Children of the Sun; Shield of Arrav
-Current Affairs | Common | P2P | 1,000 Fishing XP; Sailing quest chain | Pandemonium | Fishing 10; Sailing 22
-Pandemonium | Common | P2P | Unlocks the Sailing skill
-Vampyre Slayer | Common | F2P | 4,825 Attack XP
-Black Knights' Fortress | Common | F2P | 2,500 coins & 3 quest points
-The Knight's Sword | Common | F2P | 12,725 Smithing XP |  | Mining 10
-Lost City | Common | P2P | Zanaris access & dragon longsword/dagger |  | Crafting 31; Woodcutting 36
-Witch's House | Common | P2P | 6,325 Hitpoints XP
-Merlin's Crystal | Common | P2P | Excalibur & 1,000 Firemaking XP
-Scorpion Catcher | Common | P2P | Kharidian headpiece |  | Prayer 31
-Tribal Totem | Common | P2P | Thieving xp |  | Thieving 21
-Temple of Ikov | Common | P2P | 8,000 Fletching XP; Boots of lightness or Armadyl pendant |  | Thieving 42; Ranged 40
-Holy Grail | Common | P2P | 15,300 Defence & 11,000 Prayer XP | Merlin's Crystal | Attack 20
-Tree Gnome Village | Common | P2P | 11,450 Attack XP & spirit tree access
-Fight Arena | Common | P2P | 12,175 Attack XP
-Sea Slug | Common | P2P | 7,175 Fishing XP; Fishing Platform access |  | Firemaking 30
-Waterfall Quest | Common | P2P | 13,750 Attack & Strength XP
-The Grand Tree | Common | P2P | 18,400 Attack & 7,900 Agility XP; gnome glider |  | Agility 25
-Shilo Village | Common | P2P | 3,875 Crafting XP; Shilo Village access | Jungle Potion | Crafting 20; Agility 32
-Observatory Quest | Common | P2P | Watchtower access
-The Tourist Trap | Common | P2P | Desert mining camp access; Desert Treasure I prerequisite |  | Fletching 10; Smithing 20
-Watchtower | Common | P2P | Watchtower teleport |  | Magic 14; Thieving 15; Agility 25; Mining 40
-The Dig Site | Common | P2P | Digsite pendant |  | Agility 10; Herblore 10; Thieving 25
-Big Chompy Bird Hunting | Common | P2P | Ogre bow & chompy hat |  | Fletching 5; Cooking 30; Ranged 30
-Nature Spirit | Common | P2P | 3,000 Crafting & 2,000 Defence XP; Mort Myre access | Priest in Peril; The Restless Ghost
-Troll Stronghold | Common | P2P | 2,000 Agility XP; Stronghold access & law runecrafting | Death Plateau | Agility 15
-Eadgar's Ruse | Common | P2P | Trollheim teleport | Druidic Ritual; Troll Stronghold | Herblore 31
-Shades of Mort'ton | Common | P2P | Serpentine helm | Priest in Peril | Crafting 20; Herblore 15; Firemaking 5
-The Fremennik Trials | Common | P2P | Fremennik helm |  | Fletching 25; Woodcutting 40; Crafting 40
-Horror from the Deep | Common | P2P | Book of the dead |  | Agility 35; Ranged 35
-Troll Romance | Common | P2P | 8,000 Agility XP | Troll Stronghold | Agility 28
-In Search of the Myreque | Common | P2P | 600 Attack, Defence & Crafting XP; Myreque hideout | Nature Spirit | Agility 25
-Creature of Fenkenstrain | Common | P2P | Canifis access | Priest in Peril; The Restless Ghost | Thieving 25; Crafting 20
-Ghosts Ahoy | Common | P2P | Ectophial teleport | Priest in Peril; The Restless Ghost | Agility 25; Cooking 20
-Mountain Daughter | Common | P2P | Bearhead & prayer book |  | Agility 20
-The Feud | Common | P2P | 15,000 Thieving XP; blackjacking |  | Thieving 30
-The Golem | Common | P2P | 1,000 Crafting XP; Uzer access |  | Thieving 20; Crafting 25
-Icthlarin's Little Helper | Common | P2P | 4,000 Agility XP; Sophanem access | Gertrude's Cat
-Tears of Guthix | Common | P2P | 1,000 Crafting XP; weekly XP in your lowest skill |  | Firemaking 20; Mining 20
-Zogre Flesh Eaters | Common | P2P | 2,000 Fletching XP; ogre bow & comp ogre bow | Big Chompy Bird Hunting; Jungle Potion | Smithing 4; Herblore 8; Ranged 30; Fletching 30
-The Lost Tribe | Common | P2P | Dorgeshuun access | Goblin Diplomacy; Rune Mysteries | Agility 13; Thieving 13; Mining 17
-The Giant Dwarf | Common | P2P | 2,500 Crafting & 1,500 Firemaking XP; Keldagrim access |  | Firemaking 16; Thieving 14; Crafting 12; Mining 33
-Forgettable Tale... | Common | P2P | 5,000 Cooking & Farming XP; Kelda stout | The Giant Dwarf; Fishing Contest | Cooking 22; Farming 17
-Garden of Tranquillity | Common | P2P | 5,000 Farming XP & Enchanted lyre | Creature of Fenkenstrain | Farming 25
-A Tail of Two Cats | Common | P2P | 2 × 2,500 XP (skill choice) | Icthlarin's Little Helper
-Wanted! | Common | P2P | 5,000 Slayer XP; White Knight armoury | Recruitment Drive; The Lost Tribe; Priest in Peril; Black Knights' Fortress
-Making History | Common | P2P | 1,000 Crafting XP
-Ratcatchers | Common | P2P | Rat pole | Icthlarin's Little Helper
-Spirits of the Elid | Common | P2P | Guthix staff |  | Thieving 37; Magic 33; Ranged 37; Prayer 37
-The Hand in the Sand | Common | P2P | 9,000 Crafting XP & Bert's sand deliveries
-Fairytale I - Growing Pains | Common | P2P | Magic secateurs; 3,500 Farming XP | Lost City; Nature Spirit
-In Aid of the Myreque | Common | P2P | 2,000 Attack/Defence/Crafting XP; Burgh de Rott access | In Search of the Myreque | Construction 25; Agility 7; Crafting 25; Mining 15; Magic 7; Attack 40; Defence 40; Strength 40
-A Soul's Bane | Common | P2P | 500 Defence XP; short Zamorak-themed quest
-Rag and Bone Man I | Common | P2P | 500 Cooking XP & Bonesack
-Death to the Dorgeshuun | Common | P2P | Dorgesh-Kaan access | The Lost Tribe | Agility 23; Thieving 23
-The Eyes of Glouphrie | Common | P2P | Crystal saw seed & 250 Construction XP | The Grand Tree | Construction 5; Magic 46
-The Slug Menace | Common | P2P | 3,500 Crafting XP & Proselyte armour | Sea Slug; Wanted! | Crafting 30; Runecrafting 30; Slayer 30; Thieving 30
-Elemental Workshop II | Common | P2P | 7,500 Crafting XP & Elemental helmet | Elemental Workshop I | Magic 20; Smithing 30
-What Lies Below | Common | P2P | Chaos altar access |  | Runecrafting 35
-Olaf's Quest | Common | P2P | 12,000 Defence XP |  | Firemaking 40; Woodcutting 50
-Another Slice of H.A.M. | Common | P2P | Dorgesh-Kaan–Keldagrim train system | Death to the Dorgeshuun; The Giant Dwarf; The Dig Site | Attack 15; Prayer 25
-Bone Voyage | Common | P2P | Fossil Island access |  | Construction 50
-The Queen of Thieves | Common | P2P | 10% Piscarilius favour | Client of Kourend
-The Depths of Despair | Common | P2P | 1,500 Agility XP; Kourend favour | Client of Kourend | Agility 18
-Tale of the Righteous | Common | P2P | 10% Shayzien favour | Client of Kourend | Strength 16; Mining 10
-The Forsaken Tower | Common | P2P | 10% Lovakengj favour | Client of Kourend | Magic 20; Thieving 20
-The Ascent of Arceuus | Common | P2P | Arceuus favour | Client of Kourend | Runecrafting 12; Hunter 12
-Getting Ahead | Common | P2P | 4,000 Crafting & 3,200 Construction XP |  | Crafting 30; Construction 26
-Temple of the Eye | Common | P2P | Unlocks the Guardians of the Rift minigame |  | Runecrafting 10
-Sleeping Giants | Common | P2P | Unlocks the Giants' Foundry minigame |  | Smithing 15
-The Garden of Death | Common | P2P | 10,000 Farming XP | Client of Kourend
-Twilight's Promise | Common | P2P | Quetzal transport, Civitas illa Fortis teleport & 3,000 Thieving XP | Children of the Sun
-At First Light | Common | P2P | Hunter Guild access & 800 Construction XP | Children of the Sun; Druidic Ritual; Eagles' Peak | Hunter 46; Herblore 30; Construction 27
-Death on the Isle | Common | P2P | 10,000 Thieving, 7,500 Agility & 5,000 Crafting XP | Children of the Sun | Thieving 43; Agility 32
-Scrambled! | Common | P2P | 5,000 Cooking & 5,000 Construction XP | Children of the Sun | Cooking 36; Construction 38; Smithing 35
-Prying Times | Common | P2P | Sailing XP – early boost (needs 12 Sailing) | Pandemonium; The Knight's Sword | Smithing 30; Sailing 12
-Cold War | Common | P2P | Clockwork suit & 5,000 Agility XP |  | Hunter 10; Agility 30; Crafting 30; Construction 34; Thieving 15
-The Ides of Milk | Common | F2P | Access to Brutus F2P Boss
-Shadow of the Storm | Common | P2P | Darklight upgrade for Silverlight, 10k combat XP | Demon Slayer; The Golem | Crafting 30
-Dragon Slayer I | Uncommon | F2P | 18,650 Defence XP; wear rune platebody & green d'hide body
-Heroes' Quest | Uncommon | P2P | Dragon battleaxe wield, ice gloves & Heroes' Guild | Shield of Arrav; Lost City; Merlin's Crystal; Dragon Slayer I; Druidic Ritual | Cooking 53; Fishing 53; Herblore 25; Mining 50
-Family Crest | Uncommon | P2P | 2,000 Crafting XP & Chaos gauntlets |  | Mining 40; Smithing 40; Crafting 40; Magic 59
-Underground Pass | Uncommon | P2P | 3,000 Agility & Attack XP; Iban's staff | Biohazard | Ranged 25
-Haunted Mine | Uncommon | P2P | Salve amulet | Priest in Peril | Crafting 15; Agility 35
-One Small Favour | Uncommon | P2P | Rune crossbow & iron oxide | Druidic Ritual; Rune Mysteries | Agility 36; Crafting 25; Herblore 18; Smithing 30
-Between a Rock... | Uncommon | P2P | Gold helmet & dwarf cannon upgrade | Fishing Contest; Dwarf Cannon | Defence 30; Mining 40; Smithing 50
-Regicide | Uncommon | P2P | 13,750 Agility XP; Tirannwn/Iorwerth access | Underground Pass | Agility 56
-Throne of Miscellania | Uncommon | P2P | 1,000 Farming & Fishing XP; unlocks Managing Miscellania | Heroes' Quest; The Fremennik Trials
-Monkey Madness I | Uncommon | P2P | Dragon scimitar | The Grand Tree; Tree Gnome Village
-Roving Elves | Uncommon | P2P | Crystal bow | Regicide; Waterfall Quest | Agility 56
-Rum Deal | Uncommon | P2P | 7,000 Farming & Fishing XP | Zogre Flesh Eaters | Crafting 42; Fishing 50; Prayer 47; Slayer 42; Farming 40
-Devious Minds | Uncommon | P2P | Stonemason access |  | Smithing 65; Runecrafting 50; Fletching 50
-Enakhra's Lament | Uncommon | P2P | 7,000 Crafting & Firemaking XP; Camulet |  | Crafting 50; Firemaking 45; Prayer 43; Magic 39
-Cabin Fever | Uncommon | P2P | 7,000 Agility & Crafting XP; Book o' piracy | Pirate's Treasure; Rum Deal | Agility 42; Crafting 45; Smithing 50; Ranged 40
-Royal Trouble | Uncommon | P2P | 5,000 Agility & Slayer XP; Miscellania throne room | Throne of Miscellania | Agility 40; Slayer 40
-Fairytale II - Cure a Queen | Uncommon | P2P | Unlocks the fairy ring network | Fairytale I - Growing Pains | Thieving 40; Farming 49; Herblore 57
-Lunar Diplomacy | Uncommon | P2P | Lunar spellbook | The Fremennik Trials; Lost City; Rune Mysteries; Shilo Village; Jungle Potion; Druidic Ritual; Eadgar's Ruse; Troll Stronghold | Crafting 61; Defence 40; Firemaking 49; Magic 65; Mining 60; Woodcutting 55
-Darkness of Hallowvale | Uncommon | P2P | 7,000 Agility & 2,000 Construction XP | In Aid of the Myreque | Construction 5; Mining 20; Agility 26; Thieving 22; Magic 33; Strength 40
-My Arm's Big Adventure | Uncommon | P2P | Farming xp & disease-free patch | Eadgar's Ruse; The Feud; Jungle Potion | Farming 29; Slayer 10; Woodcutting 31
-Contact! | Uncommon | P2P | Pollnivneach access | Icthlarin's Little Helper; Prince Ali Rescue; Gertrude's Cat; The Golem
-The Fremennik Isles | Uncommon | P2P | Helm of neitiznot | The Fremennik Trials | Construction 20; Agility 40; Woodcutting 56
-The Great Brain Robbery | Uncommon | P2P | Barrelchest anchor & 3,000 Crafting XP | Cabin Fever; Creature of Fenkenstrain; Rum Deal; Zogre Flesh Eaters | Crafting 16; Construction 30; Prayer 50
-King's Ransom | Uncommon | P2P | 33,000 Defence XP; Piety (after Knight Waves) | Black Knights' Fortress; Holy Grail; Merlin's Crystal; Murder Mystery; One Small Favour | Magic 45; Defence 65
-Rag and Bone Man II | Uncommon | P2P | Ram skull helm | Rag and Bone Man I; Zogre Flesh Eaters | Slayer 40; Prayer 20; Cooking 20
-A Taste of Hope | Uncommon | P2P | 2,500 XP (skill choice) & Drakan's medallion | Darkness of Hallowvale | Agility 45; Attack 40; Crafting 48; Herblore 40; Slayer 38
-A Kingdom Divided | Uncommon | P2P | 10,000 XP (skill choice) & 24 Arceuus spells | Client of Kourend | Agility 54; Thieving 52; Woodcutting 52; Herblore 50; Mining 42; Crafting 38; Magic 35
-Land of the Goblins | Uncommon | P2P | 8,000 Agility, Fishing & Thieving XP | Another Slice of H.A.M.; Fishing Contest; Goblin Diplomacy; The Lost Tribe | Agility 38; Fishing 38; Thieving 36
-The Path of Glouphrie | Uncommon | P2P | 20,000 Slayer XP | The Eyes of Glouphrie; Waterfall Quest | Construction 60; Strength 45; Slayer 60
-Defender of Varrock | Uncommon | P2P | Required for The Curse of Arrav | Family Crest; The Knight's Sword; Shield of Arrav; Demon Slayer; Temple of Ikov | Mining 59; Smithing 59; Fishing 55; Hunter 52; Thieving 54; Magic 59
-The Heart of Darkness | Uncommon | P2P | 8,000 Mining, Thieving & Agility XP | Twilight's Promise | Mining 55; Thieving 48; Slayer 48; Agility 46
-Meat and Greet | Uncommon | P2P | 8,000 Cooking & Thieving XP | Children of the Sun
-Troubled Tortugans | Uncommon | P2P | Sailing quest; opens the Tortugan island | Pandemonium | Slayer 51; Construction 48; Sailing 45; Hunter 45; Woodcutting 40; Crafting 34
-Shadows of Custodia | Uncommon | P2P | 3,000 Construction & Fishing XP | Children of the Sun | Slayer 54; Fishing 45; Construction 41; Hunter 36
-The Red Reef | Uncommon | P2P | Access to Ancient Grove | Troubled Tortugans | Sailing 52; Mining 48
-Fallen From Grace | Uncommon | P2P | 10,000 Crafting XP & Wyrmscraig access | Pandemonium | Sailing 62; Mining 53; Runecrafting 47; Crafting 60
-Legends' Quest | Rare | P2P | Quest point cape req | Family Crest; Heroes' Quest; Underground Pass; Waterfall Quest; Shilo Village | Agility 50; Crafting 50; Herblore 45; Magic 56; Mining 52; Prayer 42; Smithing 50; Strength 50; Thieving 50; Woodcutting 50
-Desert Treasure I | Rare | P2P | Ancient magicks unlock | The Dig Site; Druidic Ritual; Temple of Ikov; The Tourist Trap; Troll Stronghold; Priest in Peril | Thieving 53; Firemaking 50; Slayer 10; Magic 50
-Mourning's End Part I | Rare | P2P | Unlocks Mourning's End Part II (Song of the Elves chain) | Roving Elves; Big Chompy Bird Hunting; Sheep Herder | Ranged 60; Thieving 50
-Mourning's End Part II | Rare | P2P | 60,000 Agility XP; Song of the Elves prerequisite | Mourning's End Part I
-Swan Song | Rare | P2P | 50,000 Fishing XP | One Small Favour; Garden of Tranquillity | Cooking 62; Fishing 62; Smithing 45; Firemaking 42; Crafting 40; Magic 66
-Dream Mentor | Rare | P2P | Hitpoints & Magic XP; required for While Guthix Sleeps | Lunar Diplomacy; Eadgar's Ruse
-Grim Tales | Rare | P2P | Witchwood icon & 25,000 Agility XP | Witch's House | Farming 45; Herblore 52; Thieving 58; Agility 59; Woodcutting 71
-Making Friends with My Arm | Rare | P2P | 50,000 Agility, 40,000 Firemaking XP; Weiss access | My Arm's Big Adventure; Swan Song; Cold War; Romeo & Juliet | Firemaking 66; Mining 72; Construction 35; Agility 68
-A Night at the Theatre | Rare | P2P | Vyre storyline part 3; unlocks The Blood Moon Rises | Sins of the Father
-Sins of the Father | Rare | P2P | Blisterwood flail & Darkmeyer teleport | A Taste of Hope | Woodcutting 62; Fletching 60; Crafting 56; Agility 52; Attack 50; Slayer 50; Magic 49
-Beneath Cursed Sands | Rare | P2P | Tombs of Amascut access; 50,000 Agility XP | Contact! | Firemaking 62; Agility 55; Thieving 47; Prayer 55; Crafting 55
-Perilous Moons | Rare | P2P | 40,000 Slayer XP; Moons of Peril access | Twilight's Promise | Slayer 48; Hunter 20; Fishing 20; Runecrafting 20; Construction 10
-The Curse of Arrav | Rare | P2P | 40,000 Agility XP | Defender of Varrock; Troll Romance | Mining 64; Ranged 62; Thieving 62; Agility 61; Strength 58; Slayer 37
-The Final Dawn | Rare | P2P | 25,000 Fletching XP; Varlamore story finale | The Heart of Darkness; Perilous Moons | Thieving 66; Runecrafting 52; Fletching 52
-Recipe for Disaster | Rare | P2P | Barrows gloves | Cook's Assistant; Fishing Contest; Goblin Diplomacy; Big Chompy Bird Hunting; Murder Mystery; Nature Spirit; Witch's House; Gertrude's Cat; Shadow of the Storm; Legends' Quest; Desert Treasure I; Monkey Madness I; Horror from the Deep | Cooking 70; Agility 48; Firemaking 20
-Secrets of the North | Rare | P2P | 60,000 Agility XP; required for Desert Treasure II | Making Friends with My Arm; Devious Minds; Hazeel Cult | Agility 69; Thieving 64; Hunter 56
-Monkey Madness II | Mythic | P2P | Demonic gorillas & heavy ballista; 60,000 Agility XP | Enlightened Journey; The Eyes of Glouphrie; Troll Stronghold; Watchtower; Tree Gnome Village; The Grand Tree | Slayer 69; Hunter 60; Agility 55; Thieving 55
-Song of the Elves | Mythic | P2P | Prifddinas; 40,000 Agility, Construction & Farming XP | Mourning's End Part II | Agility 70; Construction 70; Farming 70; Herblore 70; Hunter 70; Mining 70; Smithing 70; Woodcutting 70
-Dragon Slayer II | Mythic | P2P | Access to Vorkath; 50,000 Agility XP | Legends' Quest | Magic 75; Smithing 70; Mining 68; Crafting 62; Agility 60; Thieving 60; Construction 50; Hitpoints 50
-Desert Treasure II - The Fallen Empire | Mythic | P2P | Access to Vardorvis, Duke Sucellus, The Leviathan & The Whisperer | Secrets of the North | Firemaking 75; Magic 75; Thieving 70; Hunter 70; Agility 70; Fletching 70; Construction 60; Prayer 60
-While Guthix Sleeps | Mythic | P2P | 75,000 Farming XP; Guthix storyline finale | Dream Mentor | Attack 65; Strength 65; Defence 65; Hitpoints 65; Ranged 65; Magic 70; Prayer 70; Herblore 65; Thieving 70; Farming 65; Hunter 65; Slayer 65
-The Blood Moon Rises | Mythic | P2P | Castle Drakan teleport & Vampyrium access | A Night at the Theatre; Sins of the Father | Slayer 74; Woodcutting 74; Smithing 72; Cooking 72; Fletching 70; Magic 57; Mining 66; Herblore 64; Hunter 65; Crafting 64
-</script>
-<script type="text/plain" id="data-diaries">
-# ACHIEVEMENT DIARIES — one card per line: Name | Rarity | F2P or P2P | Notes | Prerequisite cards | Skill levels
-# Each tier lists the previous tier as its prerequisite. Same column rules as Quests.
-# Tier words Easy/Medium/Hard/Elite are used to sort diary cards.
-# Lines starting with # and blank lines are ignored. Paste your own lines below to replace or extend.
-
-Easy Ardougne Diary | Common | P2P | Ardougne cloak 1 + antique lamp
-Easy Desert Diary | Common | P2P | Desert amulet 1 + antique lamp
-Easy Falador Diary | Common | P2P | Falador shield 1 + antique lamp
-Easy Fremennik Diary | Common | P2P | Fremennik sandals + antique lamp
-Easy Kandarin Diary | Common | P2P | Kandarin headgear 1 + antique lamp
-Easy Karamja Diary | Common | P2P | Karamja gloves 1 + antique lamp
-Easy Kourend & Kebos Diary | Common | P2P | Rada's blessing 1 + antique lamp
-Easy Lumbridge & Draynor Diary | Common | P2P | Explorer's ring 1 + antique lamp
-Easy Morytania Diary | Common | P2P | Morytania legs 1 + antique lamp
-Easy Varrock Diary | Common | P2P | Varrock armour 1 + antique lamp
-Easy Western Provinces Diary | Common | P2P | Western banner 1 + antique lamp
-Easy Wilderness Diary | Common | P2P | Wilderness sword 1 + antique lamp
-Medium Ardougne Diary | Uncommon | P2P | Ardougne cloak 2 + antique lamp | Easy Ardougne Diary
-Medium Desert Diary | Uncommon | P2P | Desert amulet 2 + antique lamp | Easy Desert Diary
-Medium Falador Diary | Uncommon | P2P | Falador shield 2 + antique lamp | Easy Falador Diary
-Medium Fremennik Diary | Uncommon | P2P | Fremennik sea boots 2 + antique lamp | Easy Fremennik Diary
-Medium Kandarin Diary | Uncommon | P2P | Kandarin headgear 2 + antique lamp | Easy Kandarin Diary
-Medium Karamja Diary | Uncommon | P2P | Karamja gloves 2 + antique lamp | Easy Karamja Diary
-Medium Kourend & Kebos Diary | Uncommon | P2P | Rada's blessing 2 + antique lamp | Easy Kourend & Kebos Diary
-Medium Lumbridge & Draynor Diary | Uncommon | P2P | Explorer's ring 2 + antique lamp | Easy Lumbridge & Draynor Diary
-Medium Morytania Diary | Uncommon | P2P | Morytania legs 2 + antique lamp | Easy Morytania Diary
-Medium Varrock Diary | Uncommon | P2P | Varrock armour 2 + antique lamp | Easy Varrock Diary
-Medium Western Provinces Diary | Uncommon | P2P | Western banner 2 + antique lamp | Easy Western Provinces Diary
-Medium Wilderness Diary | Uncommon | P2P | Wilderness sword 2 + antique lamp | Easy Wilderness Diary
-Hard Ardougne Diary | Rare | P2P | Ardougne cloak 3 + antique lamp | Medium Ardougne Diary
-Hard Desert Diary | Rare | P2P | Desert amulet 3 + antique lamp | Medium Desert Diary
-Hard Falador Diary | Rare | P2P | Falador shield 3 + antique lamp | Medium Falador Diary
-Hard Fremennik Diary | Rare | P2P | Fremennik sea boots 3 + antique lamp | Medium Fremennik Diary
-Hard Kandarin Diary | Rare | P2P | Kandarin headgear 3 + antique lamp | Medium Kandarin Diary
-Hard Karamja Diary | Rare | P2P | Karamja gloves 3 + antique lamp | Medium Karamja Diary
-Hard Kourend & Kebos Diary | Rare | P2P | Rada's blessing 3 + antique lamp | Medium Kourend & Kebos Diary
-Hard Lumbridge & Draynor Diary | Rare | P2P | Explorer's ring 3 + antique lamp | Medium Lumbridge & Draynor Diary
-Hard Morytania Diary | Rare | P2P | Morytania legs 3 + antique lamp | Medium Morytania Diary
-Hard Varrock Diary | Rare | P2P | Varrock armour 3 + antique lamp | Medium Varrock Diary
-Hard Western Provinces Diary | Rare | P2P | Western banner 3 + antique lamp | Medium Western Provinces Diary
-Hard Wilderness Diary | Rare | P2P | Wilderness sword 3 + antique lamp | Medium Wilderness Diary
-Elite Ardougne Diary | Mythic | P2P | Ardougne cloak 4 (unlimited teleports) + antique lamp | Hard Ardougne Diary
-Elite Desert Diary | Mythic | P2P | Desert amulet 4 + antique lamp | Hard Desert Diary
-Elite Falador Diary | Mythic | P2P | Falador shield 4 + antique lamp | Hard Falador Diary
-Elite Fremennik Diary | Mythic | P2P | Fremennik sea boots 4 + antique lamp | Hard Fremennik Diary
-Elite Kandarin Diary | Mythic | P2P | Kandarin headgear 4 + antique lamp | Hard Kandarin Diary
-Elite Karamja Diary | Mythic | P2P | Karamja gloves 4 + antique lamp | Hard Karamja Diary
-Elite Kourend & Kebos Diary | Mythic | P2P | Rada's blessing 4 + antique lamp | Hard Kourend & Kebos Diary
-Elite Lumbridge & Draynor Diary | Mythic | P2P | Explorer's ring 4 + antique lamp | Hard Lumbridge & Draynor Diary
-Elite Morytania Diary | Mythic | P2P | Morytania legs 4 + antique lamp | Hard Morytania Diary
-Elite Varrock Diary | Mythic | P2P | Varrock armour 4 + antique lamp | Hard Varrock Diary
-Elite Western Provinces Diary | Mythic | P2P | Western banner 4 + antique lamp | Hard Western Provinces Diary
-Elite Wilderness Diary | Mythic | P2P | Wilderness sword 4 + antique lamp | Hard Wilderness Diary
-</script>
-<script type="text/plain" id="data-combat">
-# COMBAT ACHIEVEMENTS — one card per line: Name | Rarity | F2P or P2P | Notes | Prerequisite cards | Skill levels
-# Each tier lists the previous tier as its prerequisite. Same column rules as Quests.
-# The Mythic drop-rate bonus counts completed cards named "<Easy|Medium|Hard|Elite|Master|Grandmaster> Combat Achievements".
-# Lines starting with # and blank lines are ignored. Paste your own lines below to replace or extend.
-
-Easy Combat Achievements | Common | P2P | Improved Boss Slayer, Additional Void Knight Points & Warrior Guild Tokens
-Medium Combat Achievements | Common | P2P | Improved Boss Slayer, Prayer drain at Barrows removed, Increased Cannonballs in Cannon, More Void Knight Points & Warrior Guild Tokens | Easy Combat Achievements
-Hard Combat Achievements | Uncommon | P2P | Improved Boss Slayer, Unlimited Teleports to God Wars Dungeon, Halved Nightmare Zone costs, Even more Void Knight Points and Cannonballs stored in Cannon | Medium Combat Achievements
-Elite Combat Achievements | Uncommon | P2P | Improved Boss Slayer, Improved Superior Monster chance and EVEN More Cannonballs for Cannon | Hard Combat Achievements
-Master Combat Achievements | Rare | P2P | Improved Boss Slayer, Access to the Avernic Defender, Tralls have double the duration, God Wars Benefits | Elite Combat Achievements
-Grandmaster Combat Achievements | Mythic | P2P | Improved Boss Slayer, Unlimited Teleports to Mor Ul Rek, More God Wars benefits, Maxed Avernic Defender, Max mythic drop rate boost | Master Combat Achievements
-</script>
-<script type="text/plain" id="data-bosses">
-# BOSSES — one card per line: Name | Rarity | F2P or P2P | Notes | Timer (hours)
-# Timer = hours before the card auto-discards. Leave it blank (or 0) for the default of 3 hours.
-# Lines starting with # and blank lines are ignored. Paste your own lines below to replace or extend.
-
-Gem Crab | Common | P2P | Low-level crab boss; uncut gem drops | 3
-Obor | Common | F2P | Hill giant club | 3
-Bryophyta | Common | F2P | Bryophyta's staff | 3
-Giant Mole | Common | P2P | Mole skin & claw | 3
-Scurrius | Common | P2P | Scurrius' spine & Scurry pet | 3
-Sarachnis | Common | P2P | Red spiders' eggs | 3
-Scorpius | Common | P2P | Scorpion boss | 3
-Barrows Brothers | Common | P2P | Barrows armour set | 3
-Brutus | Common | F2P | F2P boss unlocked by The Ides of Milk | 3
-Amoxliatl | Uncommon | P2P | Varlamore boss; Glacial temotli drop | 3
-Dagannoth Kings | Uncommon | P2P | Dragon axe & Berserker/Archers/Seers/Warrior rings | 3
-Kalphite Queen | Uncommon | P2P | Dragon chainbody | 3
-Crazy Archaeologist | Uncommon | P2P | Odium shard & ancient staff | 3
-Deranged Archaeologist | Uncommon | P2P | Ancient shard & odium shard | 3
-Skotizo | Uncommon | P2P | Dark totem pieces | 3
-Chaos Elemental | Uncommon | P2P | Dragon 2h & pet chaos elemental | 3
-General Graardor | Uncommon | P2P | Bandos tassets & chestplate | 3
-Commander Zilyana | Uncommon | P2P | Saradomin sword & Armadyl crossbow | 3
-Kree'arra | Uncommon | P2P | Armadyl armour | 3
-K'ril Tsutsaroth | Uncommon | P2P | Zamorakian hasta & staff of the dead | 3
-Zulrah | Uncommon | P2P | Tanzanite fang & magic fang | 3
-Calvar'ion | Uncommon | P2P | Vet'ion variant: Skull of Vet'ion & Voidwaker blade | 3
-Spindel | Uncommon | P2P | Venenatis variant: Fangs of Venenatis & Voidwaker gem | 3
-Artio | Uncommon | P2P | Callisto variant: Claws of Callisto & Voidwaker hilt | 3
-Mad Angel | Uncommon | P2P | Hallowfell Sword | 3
-Alchemical Hydra | Rare | P2P | Hydra leather + ring of suffering | 3
-Cerberus | Rare | P2P | Primordial crystals & eternal boots | 3
-Corporeal Beast | Rare | P2P | Spectral sigil & elysian sigil | 3
-Grotesque Guardians | Rare | P2P | Black tourmaline core | 3
-Kraken | Rare | P2P | Trident of the seas | 3
-Moons of Peril | Rare | P2P | Blood moon armour | 3
-The Hueycoatl | Rare | P2P | Tome of earth & dragon hunter wand | 3
-Callisto | Rare | P2P | Tyras helm & callisto cub | 3
-Venenatis | Rare | P2P | Dragon pickaxe | 3
-Vet'ion | Rare | P2P | Ring of the gods | 3
-Royal Titans | Rare | P2P | Fire/Ice element staff crowns | 3
-Doom of Mokhaiotl | Rare | P2P | Delve boss: Eye of Ayak & Mokhaiotl cloth | 3
-Hespori | Rare | P2P | Bottomless compost bucket & rare seeds | 3
-Thermonuclear Smoke Devil | Mythic | P2P | Occult necklace & smoke battlestaff | 3
-Phantom Muspah | Mythic | P2P | Ancient sceptre & venator ring | 3
-Vorkath | Mythic | P2P | Dragon hunter lance + Salve (ei) | 3
-Araxxor | Mythic | P2P | Noxious halberd & araxyte venom | 3
-Duke Sucellus | Mythic | P2P | Virtus robes & ancient sceptre | 3
-The Leviathan | Mythic | P2P | Virtus mask & robes | 3
-The Nightmare | Mythic | P2P | Inquisitor's armour | 3
-Nex | Mythic | P2P | Torva & ancient ceremonial | 3
-Vardorvis | Mythic | P2P | Araxor & venator bow | 3
-The Whisperer | Mythic | P2P | Virtus robes & vestige | 3
-TzKal-Zuk | Mythic | P2P | Infernal cape | 3
-Demonic Gorillas | Mythic | P2P | Zenyte shard farm | 3
-Tormented Demons | Mythic | P2P | Burning claws drop | 3
-Magot King | Mythic | P2P | Crimson Kisten | 3
-</script>
-<script type="text/plain" id="data-minigames">
-# MINIGAMES — one card per line: Name | Rarity | F2P or P2P | Notes | Timer (hours)
-# Timer = hours before the card auto-discards. Leave it blank (or 0) for the default of 3 hours.
-# Lines starting with # and blank lines are ignored. Paste your own lines below to replace or extend.
-
-Shooting Stars | Common | F2P | Mine Stardust for valuable rewards | 3
-Spawn Hopping | Common | F2P | Steel Platelegs/bodies in wildy etc | 3
-Camdozaal Vault | Common | F2P | Timed Event for valuable rewards | 3
-Forestry | Common | F2P | Random Events specific to Woodcutting | 3
-Burthorpe Games Room | Common | P2P | Classic minigames | 3
-Vale Totems | Common | P2P | Fletching & Woodcutting XP | 3
-Golem Crafting | Common | P2P | Crafting XP & Jeweller's chisel | 3
-Mess | Common | P2P | Cooking minigame | 3
-Impetuous Impulses | Common | P2P | Hunter XP & impling jar rewards (chisel to dragon arrows) | 3
-Blast Furnace | Common | P2P | Fastest smithing xp | 3
-Brimhaven Agility Arena | Common | P2P | Agility xp + ticket shop | 3
-Castle Wars | Common | F2P | Capture the Flag Safe PVP | 3
-Clan Wars | Common | F2P | Clan PVP | 3
-Emir's Arena | Common | F2P | Safe PVP to get Imbue & Surge Scrolls | 3
-Fishing Trawler | Common | P2P | Angler outfit | 3
-Gnome Ball | Common | P2P | Agility xp | 3
-Gnome Restaurant | Common | P2P | Cooking xp & gnome items | 3
-Mage Training Arena | Common | P2P | Bones to peaches & infinity robes | 3
-Pest Control | Common | P2P | Void knight equipment | 3
-Sorceress's Garden | Common | P2P | Thieving & Farming XP; sq'irk juice & herbs | 3
-Temple Trekking | Common | P2P | Morytania access | 3
-TzHaar Fight Pit | Common | P2P | Tokkul & obsidian | 3
-Nightmare Zone | Common | P2P | Ring imbues, absorption/overload potions & combat XP | 3
-Blast Mine | Uncommon | P2P | Mining + agility xp | 3
-Barbarian Assault | Uncommon | P2P | Fighter torso & penance gear | 3
-Giants' Foundry | Uncommon | P2P | Smithing xp + double ammo mould | 3
-Guardians of the Rift | Uncommon | P2P | Abyssal pearls & outfit | 3
-Mage Arena | Uncommon | P2P | God staves & mage arena 1 | 3
-Mahogany Homes | Uncommon | P2P | Construction xp + outfit | 3
-Pyramid Plunder | Uncommon | P2P | Sceptre of the gods & thieving xp | 3
-Rogues' Den | Uncommon | P2P | Rogue outfit & minigame | 3
-Shades of Mort'ton Minigame | Uncommon | P2P | Flamtaer bracelet | 3
-Soul Wars | Uncommon | P2P | Zeal tokens & soul cape | 3
-Trouble Brewing | Uncommon | P2P | Honest Jimmy's hat | 3
-Volcanic Mine | Uncommon | P2P | Mining xp & volcanic ash | 3
-Wintertodt | Uncommon | P2P | Pyromancer outfit + firemaking xp | 3
-Tempoross | Uncommon | P2P | Harpoonfish & spirit angler outfit | 3
-Tithe Farm | Uncommon | P2P | Golovanova → Bologano seeds | 3
-Bounty Hunter | Uncommon | P2P | Emblems & ancient artefacts | 3
-Intelligence Gathering | Uncommon | P2P | Varlamore minigame | 3
-Last Man Standing | Uncommon | F2P | Valuable rewards via Safe PVP | 3
-Archery Competition | Uncommon | P2P | Ranged XP & archery tickets (e.g. rune arrows) | 3
-Managing Miscellania | Uncommon | P2P | Passive herbs/wood income | 3
-Stealing Artefacts | Uncommon | P2P | Thieving xp | 3
-Stealing Valuables | Uncommon | P2P | Thieving xp | 3
-Hallowed Sepulchre | Rare | P2P | Graceful outfit + strange old lockpick | 3
-TzHaar Fight Cave | Rare | P2P | Fire cape | 3
-Mastering Mixology | Rare | P2P | Herblore XP & alchemist's outfit | 3
-Theatre of Blood Normal Mode | Rare | P2P | Scythe of Vitur | 3
-The Gauntlet | Rare | P2P | BOWFA | 3
-Tombs of Amascut Entry/Normal Mode | Rare | P2P | Masori & Tumeken's shadow | 3
-Chambers of Xeric Normal Mode | Rare | P2P | Twisted bow & olm pet | 3
-Inferno | Mythic | P2P | Jad pet & infernal cape | 3
-Fortis Colosseum | Mythic | P2P | Sunfire fanatic armour | 3
-The Corrupted Gauntlet | Mythic | P2P | BOWFA | 3
-Zalcano | Mythic | P2P | Tanzanite fang & crystal tool | 3
-Chambers of Xeric Challenge Mode | Mythic | P2P | Twisted bow & olm pet | 3
-Theatre of Blood Hard Mode | Mythic | P2P | Scythe of Vitur | 3
-Tombs of Amascut Expert Mode | Mythic | P2P | Masori & Tumeken's shadow | 3
-</script>
-<script type="text/plain" id="data-clues">
-# CLUE SCROLLS — one card per line: Name | Rarity | F2P or P2P | Notes | Timer (hours)
-# Timer = hours before the card auto-discards. Leave it blank (or 0) for the default of 3 hours.
-# Master Clue / Elite Clue are favoured by Clue Dust Packs, so keep those exact names if you have them.
-# Lines starting with # and blank lines are ignored. Paste your own lines below to replace or extend.
-
-Beginner Clue | Common | F2P | Beginner casket | 3
-Easy Clue | Common | P2P | Easy casket | 3
-Medium Clue | Uncommon | P2P | Medium casket | 3
-Hard Clue | Uncommon | P2P | Hard casket | 3
-Elite Clue | Rare | P2P | Elite casket | 3
-Master Clue | Mythic | P2P | Master casket | 3
-</script>
 <script>
 (()=>{"use strict";
 const $=id=>document.getElementById(id),$$=(s,r=document)=>[...r.querySelectorAll(s)];
@@ -877,9 +369,9 @@ const OWN={quests:'quests',diaries:'diaries',combat:'combatAchievements'},DONE={
 const NONE={skills:'No prior skill tier required.',quests:'No requirements.',diaries:'No prior diary tier required.',combat:'No prior combat tier required.'};
 const K={state:'osrsCollectionFinal',undo:'binderScapeUndo',log:'binderScapeLog'},DK='binderScapeCardData';   // DK (card data) is deliberately not in K, so Reset Save keeps your card lists
 const ls=(k,d)=>{try{return JSON.parse(localStorage.getItem(k))??d}catch{return d}};
-/* Reference sections: defaults live in the <script type="text/plain" id="data-…"> blocks; anything saved from Settings → Card Data overrides them */
-const DEF={},SRC={},OVR=ls(DK,{});
-for(const c of['skills','quests','diaries','combat','bosses','minigames','clues']){DEF[c]=($('data-'+c)||{}).textContent||'';SRC[c]=OVR&&typeof OVR[c]==='string'?OVR[c]:DEF[c]}
+/* The app contains NO card data. The reference sections are whatever was pasted into Settings → Card Data (stored in this browser). */
+const SRC={},OVR=ls(DK,{});
+for(const c of['skills','quests','diaries','combat','bosses','minigames','clues'])SRC[c]=OVR&&typeof OVR[c]==='string'?OVR[c]:''
 /* ── Card data: parsed at runtime from the reference sections (see Settings → Card Data) ── */
 const CATS=['skills','quests','diaries','combat','bosses','minigames','clues'];
 const LBL={skills:'Skills',quests:'Quests',diaries:'Diaries',combat:'Combat Achievements',bosses:'Bosses',minigames:'Minigames',clues:'Clue Scrolls'};
@@ -925,7 +417,7 @@ const TOTAL=C.size;
 /* ── State (save-compatible with the original) ── */
 function norm(s){
  for(const k of['quests','completedQuests','diaries','completedDiaries','combatAchievements','completedCombatAchievements','bossMinigame','clues'])s[k]||=[];
- s.skills||=ST.slice();s.dust||=0;s.packsOpened||=0;s.showView||='bosses';s.showQDView||='quests';s.f2pMode??=false;
+ if(!s.skills?.length)s.skills=ST.slice();s.dust||=0;s.packsOpened||=0;s.showView||='bosses';s.showQDView||='quests';s.f2pMode??=false;
  const now=Date.now();
  s.clues=s.clues.map((c,i)=>typeof c==='string'?{id:i+1,name:c,acquiredAt:now}:{id:c.id,name:c.name,acquiredAt:c.acquiredAt||now});
  s.bossMinigame=s.bossMinigame.map(e=>typeof e==='string'?{name:e,acquiredAt:now}:{name:e.name,acquiredAt:e.acquiredAt||now});
@@ -1100,7 +592,7 @@ function openPack(cat){
  const label=cat==='diaries'?'Achievement Diaries':cat&&cat[0].toUpperCase()+cat.slice(1);
  pushUndo(cat?`Opened ${label} Dust Pack`:'Opened regular pack');
  pack=cat?typePack(cat):genPack();
- if(!pack.length){undo.pop();log.shift();pending=0;dustPack=null;return alert('No cards are available to open. Check Settings → Card Data (and F2P mode).')}
+ if(!pack.length){undo.pop();log.shift();pending=0;dustPack=null;return alert('No cards are available to open. Check the Card Data sections on the main page (and F2P mode).')}
  save();stats();
  $('pack-title').textContent=(cat?`${label} Dust Pack — `:'')+'Choose one card to keep — click a card';
  $('pack-cards').innerHTML=pack.map((n,i)=>card(n,{i,cls:dup(n)?'duplicate':canAdd(n)?'':'prereq-missing'})).join('');
@@ -1142,31 +634,34 @@ function renderActivity(){
 /* ── Settings ── */
 $('dust-grid').innerHTML=DUST.map(([k,l,d])=>`<label>${l}: <input type="number" data-k="${k}" data-d="${d}"></label>`).join('');
 $('mult-grid').innerHTML=MULT.map(([k,l])=>`<label>${l} Multiplier: <input type="number" step="0.1" data-k="${k}" data-d="3"></label>`).join('');
-function fillSettings(){$$('#settings-modal [data-k]').forEach(i=>i.value=localStorage.getItem(i.dataset.k)||i.dataset.d);$('f2p').checked=S.f2pMode===true}
+function fillSettings(){$$('#setup [data-k]').forEach(i=>i.value=localStorage.getItem(i.dataset.k)||i.dataset.d);$('f2p').checked=S.f2pMode===true}
+fillSettings();
 
 /* ── Settings tabs ── */
-const showTab=n=>{$$('.stabs [data-tab]').forEach(b=>b.classList.toggle('on',b.dataset.tab===n));$$('.spane').forEach(p=>p.hidden=p.dataset.pane!==n)};
+const showTab=n=>{$$('.stabs [data-tab]').forEach(b=>b.classList.toggle('on',b.dataset.tab===n));$$('.spane').forEach(p=>p.hidden=p.dataset.pane!==n);if(n==='creator'&&!$('cc-fields').innerHTML)ccRender()};
+/* ── Buy packs screen ── */
+function fillBuy(){stats();const pr=price();$$('[data-cost]').forEach(e=>e.textContent=(pr*e.dataset.cost).toLocaleString()+' gp')}
 async function copyText(t){try{await navigator.clipboard.writeText(t)}catch{const x=document.createElement('textarea');x.value=t;document.body.appendChild(x);x.select();document.execCommand('copy');x.remove()}}
 
 /* ── Card Data: one editable reference section per card type ── */
 const FMT={skills:'Name | Rarity | F2P or P2P | Notes',quests:'Name | Rarity | F2P or P2P | Notes | Prerequisite cards | Skill levels',diaries:'Name | Rarity | F2P or P2P | Notes | Prerequisite cards | Skill levels',combat:'Name | Rarity | F2P or P2P | Notes | Prerequisite cards | Skill levels',bosses:'Name | Rarity | F2P or P2P | Notes | Timer (hours)',minigames:'Name | Rarity | F2P or P2P | Notes | Timer (hours)',clues:'Name | Rarity | F2P or P2P | Notes | Timer (hours)'};
-$('ref-list').innerHTML=CATS.map(c=>`<details><summary id="sm-${c}"></summary><div><p class="hint">One card per line: <code>${FMT[c]}</code> — lines starting with # are ignored.</p><textarea id="ta-${c}" class="cardta" data-cat="${c}" rows="10" wrap="off" spellcheck="false"></textarea><div class="row2"><button data-copy="${c}">Copy</button><button data-reset="${c}">Reset to default</button></div><p class="hint" id="st-${c}"></p></div></details>`).join('');
+$('ref-list').innerHTML=CATS.map(c=>`<details><summary id="sm-${c}"></summary><div><p class="hint">One card per line: <code>${FMT[c]}</code> — lines starting with # are ignored.</p><textarea id="ta-${c}" class="cardta" data-cat="${c}" placeholder="Paste your ${LBL[c]} lines here…" rows="10" wrap="off" spellcheck="false"></textarea><div class="row2"><button data-copy="${c}">Copy</button><button data-reset="${c}">Clear</button></div><p class="hint" id="st-${c}"></p></div></details>`).join('');
 function lint(c){const errs=[],n=parseCat(c,$('ta-'+c).value,errs).length;
  $('sm-'+c).textContent=`${LBL[c]} (${n} card${n===1?'':'s'}${errs.length?`, ${errs.length} problem${errs.length===1?'':'s'}`:''})`;
  $('st-'+c).innerHTML=errs.length?'<span class="bad">'+errs.slice(0,6).map(esc).join('<br>')+(errs.length>6?'<br>…':'')+'</span>':'No problems found.'}
 CATS.forEach(c=>{$('ta-'+c).value=SRC[c];lint(c)});
 $('load-errs').innerHTML=PERR.length?`<p class="bad"><b>${PERR.length} problem${PERR.length===1?'':'s'} when the card data loaded (affected lines were skipped or fixed):</b><br>${PERR.slice(0,10).map(esc).join('<br>')}${PERR.length>10?'<br>…':''}</p>`:'';
-function storeData(){const o={};for(const c of CATS){const v=$('ta-'+c).value;if(v.trim()!==DEF[c].trim())o[c]=v}
+function storeData(){const o={};for(const c of CATS){const v=$('ta-'+c).value;if(v.trim())o[c]=v}
  try{Object.keys(o).length?localStorage.setItem(DK,JSON.stringify(o)):localStorage.removeItem(DK);return true}
  catch{alert('Could not save the card data (browser storage is full or blocked).');return false}}
 $('apply-data').onclick=()=>{
  const z=CATS.filter(c=>!parseCat(c,$('ta-'+c).value).length).map(c=>LBL[c]);
- if(z.length&&!confirm(`These sections have no valid cards: ${z.join(', ')}.\nApply anyway?`))return;
+ if(z.length===CATS.length&&!confirm('Every section is empty, so the game will have no cards.\nApply anyway?'))return;
  if(storeData())location.reload()};
 document.addEventListener('click',e=>{const b=e.target.closest('[data-copy],[data-reset]');if(!b)return;
  const c=b.dataset.copy||b.dataset.reset,ta=$('ta-'+c);
  if(b.dataset.copy){copyText(ta.value);b.textContent='Copied!';setTimeout(()=>b.textContent='Copy',1200)}
- else{ta.value=DEF[c];lint(c)}});
+ else{ta.value='';lint(c)}});
 document.addEventListener('input',e=>{if(e.target.classList.contains('cardta'))lint(e.target.dataset.cat);else if(e.target.closest('#cc-fields'))ccGen()});
 
 /* ── Card Creator: builds a correctly formatted line for the matching reference section ── */
@@ -1178,7 +673,7 @@ function ccRender(){
  const c=$('cc-type').value;let h;
  if(c==='skills')h=fld('cc-name','Skill name','e.g. Sailing — creates all five tiers (1-10 to 1-99)')+'<label class="opt"><input type="checkbox" id="cc-f2p"> Free-to-play skill (tiers 1-10, 1-25 and 1-50)</label>'+TM.map(t=>fld('cc-n'+t,`Notes for 1-${t} (${TIER_R[t]})`)).join('');
  else{h=fld('cc-name','Card name')+`<label class="fld">Rarity<select id="cc-rar">${RO.map(r=>`<option>${r}</option>`).join('')}</select></label><label class="opt"><input type="checkbox" id="cc-f2p"> Free-to-play</label>`+fld('cc-note','Notes (reward / unlock)');
-  if(PREC.has(c))h+=fld('cc-pre','Prerequisite cards','Separate with ; — e.g. Dragon Slayer I; Heroes\' Quest')+fld('cc-lvl','Skill levels','e.g. Mining 10; Smithing 20');
+  if(PREC.has(c))h+=fld('cc-pre','Prerequisite cards','Separate with ; — e.g. Card A; Card B')+fld('cc-lvl','Skill levels','e.g. Mining 10; Smithing 20');
   if(TIMED.has(c))h+=fld('cc-h','Timer (hours)','Blank = 3 hours before it auto-discards',' inputmode="decimal"')}
  $('cc-fields').innerHTML=h;ccGen()}
 function ccGen(){
@@ -1202,9 +697,9 @@ function ccGen(){
  $('cc-msg').innerHTML=w.length?'<span class="bad">'+w.map(esc).join('<br>')+'</span>':`Ready — goes in the <b>${LBL[c]}</b> section.`;
  $$('#cc-copy,#cc-add,#cc-apply').forEach(b=>b.disabled=!name)}
 $('cc-type').onchange=ccRender;
-$('cc-copy').onclick=async()=>{await copyText($('cc-out').value);$('cc-msg').textContent='Copied. Paste it into Settings → Card Data → '+LBL[$('cc-type').value]+'.'};
+$('cc-copy').onclick=async()=>{await copyText($('cc-out').value);$('cc-msg').textContent='Copied. Paste it into the '+LBL[$('cc-type').value]+' box under Card Data on the main page.'};
 function ccAdd(){const c=$('cc-type').value,ta=$('ta-'+c);ta.value=ta.value.replace(/\s*$/,'\n')+$('cc-out').value+'\n';lint(c)}
-$('cc-add').onclick=()=>{ccAdd();$('cc-msg').textContent='Added to the section. Press "Apply & reload" in Settings → Card Data when you are done adding cards.'};
+$('cc-add').onclick=()=>{ccAdd();$('cc-msg').textContent='Added to the section. Press "Apply & reload" under Card Data on the main page when you are done adding cards.'};
 $('cc-apply').onclick=()=>{ccAdd();if(storeData())location.reload()};
 
 /* ── PWA & updates ──
@@ -1246,8 +741,10 @@ if('serviceWorker'in navigator&&location.protocol.startsWith('http')){
  navigator.serviceWorker.register('sw.js').catch(()=>{});
  if(!isApp)checkUpdate(true)}
 
+$('empty').hidden=TOTAL>0;
+$('empty-btn').onclick=()=>{$('setup').open=true;$$('#ref-list details').forEach(d=>d.open=true);$('cards-anchor').scrollIntoView({behavior:'smooth'})};
 /* ── Events (all delegated) ── */
-const modalFx={'settings-modal':()=>{fillSettings();showTab('general')},'creator-modal':ccRender,'log-modal':renderLog,'activity-modal':renderActivity};
+const modalFx={'settings-modal':()=>showTab('readme'),'buy-modal':fillBuy,'log-modal':renderLog,'activity-modal':renderActivity};
 document.addEventListener('click',e=>{
  const t=e.target,o=t.closest('[data-open]');
  if(o){modalFx[o.dataset.open]?.();$(o.dataset.open).classList.add('open');return}
@@ -1258,13 +755,13 @@ document.addEventListener('click',e=>{
  if(tab){S[tab.parentNode.dataset.key]=tab.dataset.v;save();render();$(tab.parentNode.dataset.key==='showView'?'c-bmc':'c-qd').scrollTop=0;return}
  const f=t.closest('#filters button');if(f){flt=f.dataset.f;render();return}
  const cb=t.closest('.complete-btn');if(cb){const c=cb.closest('.card');complete(c.dataset.n,c.dataset.id);return}
- const dp=t.closest('[data-dust]');if(dp&&S.dust>=10){pending=0;openPack(dp.dataset.dust)}});
+ const by=t.closest('[data-buy]');if(by){$('buy-modal').classList.remove('open');startBatch(+by.dataset.buy);return}
+ const dp=t.closest('[data-dust]');if(dp&&S.dust>=10){pending=0;$('buy-modal').classList.remove('open');openPack(dp.dataset.dust)}});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')$$('.modal.open').pop()?.classList.remove('open')});
-$('open-packs').onclick=()=>{let q=Math.max(1,parseInt($('qty').value,10)||1);if(q>50){q=50;alert('Maximum 50 packs at once to avoid lag — opened 50.')}startBatch(q)};
+
 $('save-settings').onclick=()=>{
- $$('#settings-modal [data-k]').forEach(i=>localStorage.setItem(i.dataset.k,i.value));
- S.f2pMode=$('f2p').checked;loadCfg();save();alert('Settings saved!');$('settings-modal').classList.remove('open');stats()};
-$('data-export').onclick=()=>$('export-save').click();$('data-import').onclick=()=>$('import-input').click();
+ $$('#setup [data-k]').forEach(i=>localStorage.setItem(i.dataset.k,i.value));
+ S.f2pMode=$('f2p').checked;loadCfg();save();alert('Settings saved!');stats()};
 $('reset-save').onclick=()=>{if(confirm('Reset all progress? This cannot be undone.')){Object.values(K).forEach(k=>localStorage.removeItem(k));location.reload()}};
 $('export-save').onclick=()=>{
  const a=document.createElement('a'),u=URL.createObjectURL(new Blob([JSON.stringify(S,null,2)],{type:'application/json'}));
@@ -1301,7 +798,7 @@ document.addEventListener('mousemove',e=>{if(tip.style.display==='block')place(e
 /* ── Init ── */
 loadCfg();sync();render();expire();
 setInterval(tick,1000);document.addEventListener('visibilitychange',tick);
-if(S.starterPacks>0){const q=S.starterPacks;S.starterPacks=0;save();startBatch(q)}
+if(S.starterPacks>0&&TOTAL){const q=S.starterPacks;S.starterPacks=0;save();startBatch(q)}
 else save();
 })();
 </script>
